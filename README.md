@@ -22,6 +22,7 @@ The results of the sampler are displayed on the [Subverse Sampler](https://odin-
 
 ## Sources:
   - Left:
+    * MSNBC
     * Vox
   - Center Left:
     * The New York Times
