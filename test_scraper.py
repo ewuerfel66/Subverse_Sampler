@@ -55,11 +55,11 @@ wsj_articleURLs = []
 
 print("Scraping:")
 
-# msnbc
-print("--- MSNBC")
-scrapers.msnbc(sections.msnbc, msnbc_articleURLs)
+# Fox
+print("--- Fox News")
+scrapers.fox(sections.fox, fox_articleURLs)
 # Get unique articles
-msnbc_articleURLs = list(set(msnbc_articleURLs))
+fox_articleURLs = list(set(fox_articleURLs))
 
 print("")
 
@@ -71,27 +71,28 @@ print("")
 print("Compiling data for:")
 
 
-print("--- MSNBC")
+print("--- Fox News")
 # Create lists for time and source
-msnbc_source = ["msnbc" for i in range(len(msnbc_articleURLs))]
-msnbc_days = [day for i in range(len(msnbc_articleURLs))]
-msnbc_months = [month for i in range(len(msnbc_articleURLs))]
-msnbc_years = [year for i in range(len(msnbc_articleURLs))]
+fox_source = ["fox" for i in range(len(fox_articleURLs))]
+fox_days = [day for i in range(len(fox_articleURLs))]
+fox_months = [month for i in range(len(fox_articleURLs))]
+fox_years = [year for i in range(len(fox_articleURLs))]
 
 # Instantiate df
-msnbc_df = pd.DataFrame()
+fox_df = pd.DataFrame()
 
 # add data to df
-msnbc_df["article_URLs"] = msnbc_articleURLs
-msnbc_df["source"] = msnbc_source
-msnbc_df["day"] = msnbc_days
-msnbc_df["month"] = msnbc_months
-msnbc_df["year"] = msnbc_years
+fox_df["article_URLs"] = fox_articleURLs
+fox_df["source"] = fox_source
+fox_df["day"] = fox_days
+fox_df["month"] = fox_months
+fox_df["year"] = fox_years
 
 
 # Concatenate the dfs
-df = pd.concat([msnbc_df])
+df = pd.concat([fox_df])
 
+print(len(fox_articleURLs))
 print("")
 
 

@@ -67,6 +67,12 @@ scrapers.examiner(sections.examiner, examiner_articleURLs)
 # Get unique articles
 examiner_articleURLs = list(set(examiner_articleURLs))
 
+# Fox
+print("--- Fox News")
+scrapers.fox(sections.fox, fox_articleURLs)
+# Get unique articles
+fox_articleURLs = list(set(fox_articleURLs))
+
 # The Hill
 print("--- The Hill")
 scrapers.hill(sections.hill, hill_articleURLs)
@@ -147,6 +153,28 @@ examiner_df["source"] = examiner_source
 examiner_df["day"] = examiner_days
 examiner_df["month"] = examiner_months
 examiner_df["year"] = examiner_years
+
+
+print("--- Fox News")
+# Create lists for time and source
+fox_source = ["fox" for i in range(len(fox_articleURLs))]
+fox_days = [day for i in range(len(fox_articleURLs))]
+fox_months = [month for i in range(len(fox_articleURLs))]
+fox_years = [year for i in range(len(fox_articleURLs))]
+
+# Instantiate df
+fox_df = pd.DataFrame()
+
+# add data to df
+fox_df["article_URLs"] = fox_articleURLs
+fox_df["source"] = fox_source
+fox_df["day"] = fox_days
+fox_df["month"] = fox_months
+fox_df["year"] = fox_years
+
+
+# Concatenate the dfs
+df = pd.concat([fox_df])
 
 
 print("--- The Hill")
@@ -258,7 +286,7 @@ wsj_df["year"] = wsj_years
 
 # Concatenate the dfs
 df = pd.concat([hill_df, examiner_df, nyt_df, breitbart_df, 
-                vox_df, wsj_df, wapo_df, msnbc_df])
+                vox_df, wsj_df, wapo_df, msnbc_df, fox_df])
 
 print("")
 
