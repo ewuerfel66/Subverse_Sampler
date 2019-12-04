@@ -31,6 +31,7 @@ The results of the sampler are displayed on the [Subverse Sampler](https://odin-
     * The Hill
     * The Wall Street Journal
   - Center Right:
+    * Fox News
     * The Washington Examiner
   - Right:
     * Breitbart
