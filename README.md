@@ -25,8 +25,10 @@ The results of the sampler are displayed on the [Subverse Sampler](https://odin-
     * Vox
   - Center Left:
     * The New York Times
+    * The Washington Post
   - Center:
     * The Hill
+    * The Wall Street Journal
   - Center Right:
     * The Washington Examiner
   - Right:
