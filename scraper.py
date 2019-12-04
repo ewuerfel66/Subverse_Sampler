@@ -1,8 +1,9 @@
 """
 News Sampler
 
-- Collect article URL, Source, timestamp into df
-- Send df to ElephantSQL
+- Scrape article URL, source, and timestamp from sources
+- Compile data into DataFrame
+- Send DataFrame to ElephantSQL DataBase
 """
 
 print("")
@@ -29,7 +30,9 @@ import scrapers
 ####################################################
 
 # Create timestamp
-today = datetime.strftime(datetime.now(), '%m_%d_%y')
+day = datetime.now().day
+month = datetime.now().month
+year = datetime.now().year
 
 # Initialize URL lists
 ap_articleURLs = []
@@ -53,7 +56,7 @@ wsj_articleURLs = []
 print("Scraping:")
 
 # Breitbart News
-print("--- Breitbart News")
+print("--- Breitbart")
 scrapers.breitbart(sections.breitbart, breitbart_articleURLs)
 # Get unique articles
 breitbart_articleURLs = list(set(breitbart_articleURLs))
@@ -104,10 +107,12 @@ print("")
 print("Compiling data for:")
 
 
-print("--- Breitbart News")
+print("--- Breitbart")
 # Create lists for time and source
 breitbart_source = ["breitbart" for i in range(len(breitbart_articleURLs))]
-breitbart_dates = [today for i in range(len(breitbart_articleURLs))]
+breitbart_days = [day for i in range(len(breitbart_articleURLs))]
+breitbart_months = [month for i in range(len(breitbart_articleURLs))]
+breitbart_years = [year for i in range(len(breitbart_articleURLs))]
 
 # Instantiate df
 breitbart_df = pd.DataFrame()
@@ -115,13 +120,17 @@ breitbart_df = pd.DataFrame()
 # add data to df
 breitbart_df["article_URLs"] = breitbart_articleURLs
 breitbart_df["source"] = breitbart_source
-breitbart_df["date"] = breitbart_dates
+breitbart_df["day"] = breitbart_days
+breitbart_df["month"] = breitbart_months
+breitbart_df["year"] = breitbart_years
 
 
 print("--- The Washington Examiner")
 # Create lists for time and source
 examiner_source = ["examiner" for i in range(len(examiner_articleURLs))]
-examiner_dates = [today for i in range(len(examiner_articleURLs))]
+examiner_days = [day for i in range(len(examiner_articleURLs))]
+examiner_months = [month for i in range(len(examiner_articleURLs))]
+examiner_years = [year for i in range(len(examiner_articleURLs))]
 
 # Instantiate df
 examiner_df = pd.DataFrame()
@@ -129,13 +138,17 @@ examiner_df = pd.DataFrame()
 # add data to df
 examiner_df["article_URLs"] = examiner_articleURLs
 examiner_df["source"] = examiner_source
-examiner_df["date"] = examiner_dates
+examiner_df["day"] = examiner_days
+examiner_df["month"] = examiner_months
+examiner_df["year"] = examiner_years
 
 
 print("--- The Hill")
 # Create lists for time and source
 hill_source = ["hill" for i in range(len(hill_articleURLs))]
-hill_dates = [today for i in range(len(hill_articleURLs))]
+hill_days = [day for i in range(len(hill_articleURLs))]
+hill_months = [month for i in range(len(hill_articleURLs))]
+hill_years = [year for i in range(len(hill_articleURLs))]
 
 # Instantiate df
 hill_df = pd.DataFrame()
@@ -143,13 +156,17 @@ hill_df = pd.DataFrame()
 # add data to df
 hill_df["article_URLs"] = hill_articleURLs
 hill_df["source"] = hill_source
-hill_df["date"] = hill_dates
+hill_df["day"] = hill_days
+hill_df["month"] = hill_months
+hill_df["year"] = hill_years
 
 
 print("--- The New York Times")
 # Create lists for time and source
 nyt_source = ["nyt" for i in range(len(nyt_articleURLs))]
-nyt_dates = [today for i in range(len(nyt_articleURLs))]
+nyt_days = [day for i in range(len(nyt_articleURLs))]
+nyt_months = [month for i in range(len(nyt_articleURLs))]
+nyt_years = [year for i in range(len(nyt_articleURLs))]
 
 # Instantiate df
 nyt_df = pd.DataFrame()
@@ -157,13 +174,17 @@ nyt_df = pd.DataFrame()
 # add data to df
 nyt_df["article_URLs"] = nyt_articleURLs
 nyt_df["source"] = nyt_source
-nyt_df["date"] = nyt_dates
+nyt_df["day"] = nyt_days
+nyt_df["month"] = nyt_months
+nyt_df["year"] = nyt_years
 
 
 print("--- Vox")
 # Create lists for time and source
 vox_source = ["vox" for i in range(len(vox_articleURLs))]
-vox_dates = [today for i in range(len(vox_articleURLs))]
+vox_days = [day for i in range(len(vox_articleURLs))]
+vox_months = [month for i in range(len(vox_articleURLs))]
+vox_years = [year for i in range(len(vox_articleURLs))]
 
 # Instantiate df
 vox_df = pd.DataFrame()
@@ -171,13 +192,17 @@ vox_df = pd.DataFrame()
 # add data to df
 vox_df["article_URLs"] = vox_articleURLs
 vox_df["source"] = vox_source
-vox_df["date"] = vox_dates
+vox_df["day"] = vox_days
+vox_df["month"] = vox_months
+vox_df["year"] = vox_years
 
 
 print("--- The Washington Post")
 # Create lists for time and source
 wapo_source = ["wapo" for i in range(len(wapo_articleURLs))]
-wapo_dates = [today for i in range(len(wapo_articleURLs))]
+wapo_days = [day for i in range(len(wapo_articleURLs))]
+wapo_months = [month for i in range(len(wapo_articleURLs))]
+wapo_years = [year for i in range(len(wapo_articleURLs))]
 
 # Instantiate df
 wapo_df = pd.DataFrame()
@@ -185,13 +210,17 @@ wapo_df = pd.DataFrame()
 # add data to df
 wapo_df["article_URLs"] = wapo_articleURLs
 wapo_df["source"] = wapo_source
-wapo_df["date"] = wapo_dates
+wapo_df["day"] = wapo_days
+wapo_df["month"] = wapo_months
+wapo_df["year"] = wapo_years
 
 
 print("--- The Wall Street Journal")
 # Create lists for time and source
 wsj_source = ["wsj" for i in range(len(wsj_articleURLs))]
-wsj_dates = [today for i in range(len(wsj_articleURLs))]
+wsj_days = [day for i in range(len(wsj_articleURLs))]
+wsj_months = [month for i in range(len(wsj_articleURLs))]
+wsj_years = [year for i in range(len(wsj_articleURLs))]
 
 # Instantiate df
 wsj_df = pd.DataFrame()
@@ -199,7 +228,9 @@ wsj_df = pd.DataFrame()
 # add data to df
 wsj_df["article_URLs"] = wsj_articleURLs
 wsj_df["source"] = wsj_source
-wsj_df["date"] = wsj_dates
+wsj_df["day"] = wsj_days
+wsj_df["month"] = wsj_months
+wsj_df["year"] = wsj_years
 
 
 # Concatenate the dfs
@@ -243,7 +274,7 @@ print('--- Adding data to DataBase...')
 for row in rows:
     insert = """
     INSERT INTO news
-    (article_URL, source, date)
+    (article_URL, source, day, month, year)
     VALUES 
     """ + str(row) + ';'
     
