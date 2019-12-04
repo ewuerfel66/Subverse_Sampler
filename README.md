@@ -17,6 +17,8 @@ This is set up to run daily at 10 AM EST.
 ### The News Sampler
 The News Sampler selects a simple random sample of 100 articles for each source.
 
+The results of the sampler are displayed on the [Subverse Sampler](https://odin-central.github.io/) site for review.
+
 
 ## Sources:
   - Left:
