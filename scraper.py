@@ -82,6 +82,18 @@ scrapers.vox(sections.vox, vox_articleURLs)
 # Get unique articles
 vox_articleURLs = list(set(vox_articleURLs))
 
+# The Washington Post
+print("--- The Washington Post")
+scrapers.wapo(sections.wapo, wapo_articleURLs)
+# Get unique articles
+wapo_articleURLs = list(set(wapo_articleURLs))
+
+# The Wall Street Journal
+print("--- The Wall Street Journal")
+scrapers.wsj(sections.wsj, wsj_articleURLs)
+# Get unique articles
+wsj_articleURLs = list(set(wsj_articleURLs))
+
 print("")
 
 
@@ -162,8 +174,36 @@ vox_df["source"] = vox_source
 vox_df["date"] = vox_dates
 
 
+print("--- The Washington Post")
+# Create lists for time and source
+wapo_source = ["wapo" for i in range(len(wapo_articleURLs))]
+wapo_dates = [today for i in range(len(wapo_articleURLs))]
+
+# Instantiate df
+wapo_df = pd.DataFrame()
+
+# add data to df
+wapo_df["article_URLs"] = wapo_articleURLs
+wapo_df["source"] = wapo_source
+wapo_df["date"] = wapo_dates
+
+
+print("--- The Wall Street Journal")
+# Create lists for time and source
+wsj_source = ["wsj" for i in range(len(wsj_articleURLs))]
+wsj_dates = [today for i in range(len(wsj_articleURLs))]
+
+# Instantiate df
+wsj_df = pd.DataFrame()
+
+# add data to df
+wsj_df["article_URLs"] = wsj_articleURLs
+wsj_df["source"] = wsj_source
+wsj_df["date"] = wsj_dates
+
+
 # Concatenate the dfs
-df = pd.concat([hill_df, examiner_df, nyt_df, breitbart_df, vox_df])
+df = pd.concat([hill_df, examiner_df, nyt_df, breitbart_df, vox_df, wsj_df, wapo_df])
 
 print("")
 
@@ -178,7 +218,7 @@ print("--- Connecting...")
 # Credentials
 dbname = "iuawmtcy"
 user = "iuawmtcy"
-password = "" # Don't commit!!!
+password = "lZ2nxC9f1toAtjhKs2b0NFjaYTJIuAWr" # Don't commit!!!
 host = "salt.db.elephantsql.com"
 
 # Establish connection
