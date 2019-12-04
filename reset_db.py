@@ -4,7 +4,7 @@ print("Connecting...")
 # Credentials
 dbname = "iuawmtcy"
 user = "iuawmtcy"
-password = "ttO8Y-woMRTpIVWMRvmijGM2Tr1GyPqZ" # Don't commit!!!
+password = "uZH51Pcq9N6jamL5our1dz9PoZGTRK9r" # Don't commit!!!
 host = "salt.db.elephantsql.com"
 
 # Establish connection

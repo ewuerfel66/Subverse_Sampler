@@ -58,6 +58,12 @@ scrapers.breitbart(sections.breitbart, breitbart_articleURLs)
 # Get unique articles
 breitbart_articleURLs = list(set(breitbart_articleURLs))
 
+# The Washington Examiner
+print("--- The Washington Examiner")
+scrapers.examiner(sections.examiner, examiner_articleURLs)
+# Get unique articles
+examiner_articleURLs = list(set(examiner_articleURLs))
+
 # The Hill
 print("--- The Hill")
 scrapers.hill(sections.hill, hill_articleURLs)
@@ -69,12 +75,6 @@ print("--- The New York Times")
 scrapers.nyt(sections.nyt, nyt_articleURLs)
 # Get unique articles
 nyt_articleURLs = list(set(nyt_articleURLs))
-
-# The Washington Examiner
-print("--- The Washington Examiner")
-scrapers.examiner(sections.examiner, examiner_articleURLs)
-# Get unique articles
-examiner_articleURLs = list(set(examiner_articleURLs))
 
 # Vox
 print("--- Vox")
@@ -106,6 +106,20 @@ breitbart_df["source"] = breitbart_source
 breitbart_df["date"] = breitbart_dates
 
 
+print("--- The Washington Examiner")
+# Create lists for time and source
+examiner_source = ["examiner" for i in range(len(examiner_articleURLs))]
+examiner_dates = [today for i in range(len(examiner_articleURLs))]
+
+# Instantiate df
+examiner_df = pd.DataFrame()
+
+# add data to df
+examiner_df["article_URLs"] = examiner_articleURLs
+examiner_df["source"] = examiner_source
+examiner_df["date"] = examiner_dates
+
+
 print("--- The Hill")
 # Create lists for time and source
 hill_source = ["hill" for i in range(len(hill_articleURLs))]
@@ -132,20 +146,6 @@ nyt_df = pd.DataFrame()
 nyt_df["article_URLs"] = nyt_articleURLs
 nyt_df["source"] = nyt_source
 nyt_df["date"] = nyt_dates
-
-
-print("--- The Washington Examiner")
-# Create lists for time and source
-examiner_source = ["examiner" for i in range(len(examiner_articleURLs))]
-examiner_dates = [today for i in range(len(examiner_articleURLs))]
-
-# Instantiate df
-examiner_df = pd.DataFrame()
-
-# add data to df
-examiner_df["article_URLs"] = examiner_articleURLs
-examiner_df["source"] = examiner_source
-examiner_df["date"] = examiner_dates
 
 
 print("--- Vox")
@@ -178,7 +178,7 @@ print("--- Connecting...")
 # Credentials
 dbname = "iuawmtcy"
 user = "iuawmtcy"
-password = "ttO8Y-woMRTpIVWMRvmijGM2Tr1GyPqZ" # Don't commit!!!
+password = "uZH51Pcq9N6jamL5our1dz9PoZGTRK9r" # Don't commit!!!
 host = "salt.db.elephantsql.com"
 
 # Establish connection
