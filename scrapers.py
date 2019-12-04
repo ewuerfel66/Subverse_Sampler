@@ -173,12 +173,12 @@ def nyt(nyt_Sections, nyt_ArticleURLs):
             for link in soup.find_all('a', href=re.compile('^(/2019/)')):
                 if 'href' in link.attrs:
                     if link.attrs['href'] not in nyt_ArticleURLs:
-                        # print(link.attrs['href'])
-                        nyt_ArticleURLs.append(link.attrs['href'])
+                        newPage = "https://www.nytimes.com" + str(link.attrs['href'])
+                        nyt_ArticleURLs.append(newPage)
         except HTTPError as e:
-            print(e)
+            pass
         except URLError as e:
-            print(e)
+            pass
 
 
 # Vox
