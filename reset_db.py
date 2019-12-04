@@ -4,7 +4,7 @@ print("Connecting...")
 # Credentials
 dbname = "iuawmtcy"
 user = "iuawmtcy"
-password = "" # Don't commit!!!
+password = "lZ2nxC9f1toAtjhKs2b0NFjaYTJIuAWr" # Don't commit!!!
 host = "salt.db.elephantsql.com"
 
 # Establish connection
@@ -40,4 +40,5 @@ pg_curs.execute(create)
 pg_curs.close()
 pg_conn.commit()
 
-print('all done!')
+print('--- All done! ---')
+print("")

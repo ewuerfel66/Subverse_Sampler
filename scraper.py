@@ -73,6 +73,12 @@ scrapers.hill(sections.hill, hill_articleURLs)
 # Get unique articles
 hill_articleURLs = list(set(hill_articleURLs))
 
+# MSNBC
+print("--- MSNBC")
+scrapers.msnbc(sections.msnbc, msnbc_articleURLs)
+# Get unique articles
+msnbc_articleURLs = list(set(msnbc_articleURLs))
+
 # The New York Times
 print("--- The New York Times")
 scrapers.nyt(sections.nyt, nyt_articleURLs)
@@ -160,6 +166,23 @@ hill_df["day"] = hill_days
 hill_df["month"] = hill_months
 hill_df["year"] = hill_years
 
+print("--- MSNBC")
+# Create lists for time and source
+msnbc_source = ["msnbc" for i in range(len(msnbc_articleURLs))]
+msnbc_days = [day for i in range(len(msnbc_articleURLs))]
+msnbc_months = [month for i in range(len(msnbc_articleURLs))]
+msnbc_years = [year for i in range(len(msnbc_articleURLs))]
+
+# Instantiate df
+msnbc_df = pd.DataFrame()
+
+# add data to df
+msnbc_df["article_URLs"] = msnbc_articleURLs
+msnbc_df["source"] = msnbc_source
+msnbc_df["day"] = msnbc_days
+msnbc_df["month"] = msnbc_months
+msnbc_df["year"] = msnbc_years
+
 
 print("--- The New York Times")
 # Create lists for time and source
@@ -234,7 +257,8 @@ wsj_df["year"] = wsj_years
 
 
 # Concatenate the dfs
-df = pd.concat([hill_df, examiner_df, nyt_df, breitbart_df, vox_df, wsj_df, wapo_df])
+df = pd.concat([hill_df, examiner_df, nyt_df, breitbart_df, 
+                vox_df, wsj_df, wapo_df, msnbc_df])
 
 print("")
 
@@ -249,7 +273,7 @@ print("--- Connecting...")
 # Credentials
 dbname = "iuawmtcy"
 user = "iuawmtcy"
-password = "" # Don't commit!!!
+password = "lZ2nxC9f1toAtjhKs2b0NFjaYTJIuAWr" # Don't commit!!!
 host = "salt.db.elephantsql.com"
 
 # Establish connection

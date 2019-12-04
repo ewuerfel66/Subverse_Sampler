@@ -55,11 +55,11 @@ wsj_articleURLs = []
 
 print("Scraping:")
 
-# Vox
-print("--- Vox")
-scrapers.vox(sections.vox, vox_articleURLs)
+# msnbc
+print("--- MSNBC")
+scrapers.msnbc(sections.msnbc, msnbc_articleURLs)
 # Get unique articles
-vox_articleURLs = list(set(vox_articleURLs))
+msnbc_articleURLs = list(set(msnbc_articleURLs))
 
 print("")
 
@@ -71,26 +71,26 @@ print("")
 print("Compiling data for:")
 
 
-print("--- Vox")
+print("--- MSNBC")
 # Create lists for time and source
-vox_source = ["vox" for i in range(len(vox_articleURLs))]
-vox_days = [day for i in range(len(vox_articleURLs))]
-vox_months = [month for i in range(len(vox_articleURLs))]
-vox_years = [year for i in range(len(vox_articleURLs))]
+msnbc_source = ["msnbc" for i in range(len(msnbc_articleURLs))]
+msnbc_days = [day for i in range(len(msnbc_articleURLs))]
+msnbc_months = [month for i in range(len(msnbc_articleURLs))]
+msnbc_years = [year for i in range(len(msnbc_articleURLs))]
 
 # Instantiate df
-vox_df = pd.DataFrame()
+msnbc_df = pd.DataFrame()
 
 # add data to df
-vox_df["article_URLs"] = vox_articleURLs
-vox_df["source"] = vox_source
-vox_df["day"] = vox_days
-vox_df["month"] = vox_months
-vox_df["year"] = vox_years
+msnbc_df["article_URLs"] = msnbc_articleURLs
+msnbc_df["source"] = msnbc_source
+msnbc_df["day"] = msnbc_days
+msnbc_df["month"] = msnbc_months
+msnbc_df["year"] = msnbc_years
 
 
 # Concatenate the dfs
-df = pd.concat([vox_df])
+df = pd.concat([msnbc_df])
 
 print("")
 
@@ -105,7 +105,7 @@ print("--- Connecting...")
 # Credentials
 dbname = "iuawmtcy"
 user = "iuawmtcy"
-password = "" # Don't commit!!!
+password = "lZ2nxC9f1toAtjhKs2b0NFjaYTJIuAWr" # Don't commit!!!
 host = "salt.db.elephantsql.com"
 
 # Establish connection
