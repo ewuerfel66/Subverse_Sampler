@@ -163,6 +163,23 @@ def msnbc(msnbc_Sections, msnbc_ArticleURLs):
             print(e)
 
 
+# The New York Post
+def nypost(nypost_Sections, nypost_ArticleURLs):
+    for SectionURL in nypost_Sections:
+        try:
+            html = urlopen(SectionURL)
+            soup = BeautifulSoup(html, 'html.parser')
+            for link in soup.find_all('a', href=re.compile('^(https://nypost.com/20)')):
+                if 'href' in link.attrs:
+                    if link.attrs['href'] not in nypost_ArticleURLs:
+                        # print(link.attrs['href'])
+                        nypost_ArticleURLs.append(link.attrs['href'])  
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
 # NYT
 def nyt(nyt_Sections, nyt_ArticleURLs):
     for SectionURL in nyt_Sections:

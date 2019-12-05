@@ -114,6 +114,21 @@ msnbc = ['https://www.nbcnews.com/',
          'https://www.nbcnews.com/health']
 
 
+# The New York Post
+nypost = ['https://nypost.com/',
+          'https://nypost.com/news/',
+          'https://nypost.com/metro/',
+          'https://nypost.com/sports/',
+          'https://nypost.com/business/',
+          'https://nypost.com/entertainment/',
+          'https://nypost.com/fashion/',
+          'https://nypost.com/shopping/',
+          'https://nypost.com/living/',
+          'https://nypost.com/media/',
+          'https://nypost.com/tech/',
+          'https://nypost.com/real-estate/']
+
+
 # NYT
 nyt = ['https://www.nytimes.com/section/todayspaper',
         'https://www.nytimes.com/section/world',

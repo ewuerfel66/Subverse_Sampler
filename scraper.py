@@ -43,6 +43,7 @@ examiner_articleURLs = []
 fox_articleURLs = []
 hill_articleURLs = []
 msnbc_articleURLs = []
+nypost_articleURLs = []
 nyt_articleURLs = []
 vox_articleURLs = []
 wapo_articleURLs = []
@@ -84,6 +85,12 @@ print("--- MSNBC")
 scrapers.msnbc(sections.msnbc, msnbc_articleURLs)
 # Get unique articles
 msnbc_articleURLs = list(set(msnbc_articleURLs))
+
+# nypost
+print("--- The New York Post")
+scrapers.nypost(sections.nypost, nypost_articleURLs)
+# Get unique articles
+nypost_articleURLs = list(set(nypost_articleURLs))
 
 # The New York Times
 print("--- The New York Times")
@@ -194,6 +201,7 @@ hill_df["day"] = hill_days
 hill_df["month"] = hill_months
 hill_df["year"] = hill_years
 
+
 print("--- MSNBC")
 # Create lists for time and source
 msnbc_source = ["msnbc" for i in range(len(msnbc_articleURLs))]
@@ -210,6 +218,24 @@ msnbc_df["source"] = msnbc_source
 msnbc_df["day"] = msnbc_days
 msnbc_df["month"] = msnbc_months
 msnbc_df["year"] = msnbc_years
+
+
+print("--- The New York Post")
+# Create lists for time and source
+nypost_source = ["nypost" for i in range(len(nypost_articleURLs))]
+nypost_days = [day for i in range(len(nypost_articleURLs))]
+nypost_months = [month for i in range(len(nypost_articleURLs))]
+nypost_years = [year for i in range(len(nypost_articleURLs))]
+
+# Instantiate df
+nypost_df = pd.DataFrame()
+
+# add data to df
+nypost_df["article_URLs"] = nypost_articleURLs
+nypost_df["source"] = nypost_source
+nypost_df["day"] = nypost_days
+nypost_df["month"] = nypost_months
+nypost_df["year"] = nypost_years
 
 
 print("--- The New York Times")
@@ -285,8 +311,8 @@ wsj_df["year"] = wsj_years
 
 
 # Concatenate the dfs
-df = pd.concat([hill_df, examiner_df, nyt_df, breitbart_df, 
-                vox_df, wsj_df, wapo_df, msnbc_df, fox_df])
+df = pd.concat([hill_df, examiner_df, nyt_df, breitbart_df, vox_df, 
+                wsj_df, wapo_df, msnbc_df, fox_df, nypost_df])
 
 print("")
 
@@ -301,7 +327,7 @@ print("--- Connecting...")
 # Credentials
 dbname = "iuawmtcy"
 user = "iuawmtcy"
-password = "" # Don't commit!!!
+password = "UnWCQ5-4ymEJCpY5Tly-F7ZXXONAEx7i" # Don't commit!!!
 host = "salt.db.elephantsql.com"
 
 # Establish connection

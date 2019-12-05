@@ -43,6 +43,7 @@ examiner_articleURLs = []
 fox_articleURLs = []
 hill_articleURLs = []
 msnbc_articleURLs = []
+nypost_articleURLs = []
 nyt_articleURLs = []
 vox_articleURLs = []
 wapo_articleURLs = []
@@ -55,11 +56,11 @@ wsj_articleURLs = []
 
 print("Scraping:")
 
-# Fox
-print("--- Fox News")
-scrapers.fox(sections.fox, fox_articleURLs)
+# nypost
+print("--- The New York Post")
+scrapers.nypost(sections.nypost, nypost_articleURLs)
 # Get unique articles
-fox_articleURLs = list(set(fox_articleURLs))
+nypost_articleURLs = list(set(nypost_articleURLs))
 
 print("")
 
@@ -71,28 +72,28 @@ print("")
 print("Compiling data for:")
 
 
-print("--- Fox News")
+print("--- The New York Post")
 # Create lists for time and source
-fox_source = ["fox" for i in range(len(fox_articleURLs))]
-fox_days = [day for i in range(len(fox_articleURLs))]
-fox_months = [month for i in range(len(fox_articleURLs))]
-fox_years = [year for i in range(len(fox_articleURLs))]
+nypost_source = ["nypost" for i in range(len(nypost_articleURLs))]
+nypost_days = [day for i in range(len(nypost_articleURLs))]
+nypost_months = [month for i in range(len(nypost_articleURLs))]
+nypost_years = [year for i in range(len(nypost_articleURLs))]
 
 # Instantiate df
-fox_df = pd.DataFrame()
+nypost_df = pd.DataFrame()
 
 # add data to df
-fox_df["article_URLs"] = fox_articleURLs
-fox_df["source"] = fox_source
-fox_df["day"] = fox_days
-fox_df["month"] = fox_months
-fox_df["year"] = fox_years
+nypost_df["article_URLs"] = nypost_articleURLs
+nypost_df["source"] = nypost_source
+nypost_df["day"] = nypost_days
+nypost_df["month"] = nypost_months
+nypost_df["year"] = nypost_years
 
 
 # Concatenate the dfs
-df = pd.concat([fox_df])
+df = pd.concat([nypost_df])
 
-print(len(fox_articleURLs))
+print(len(nypost_articleURLs))
 print("")
 
 
@@ -106,7 +107,7 @@ print("--- Connecting...")
 # Credentials
 dbname = "iuawmtcy"
 user = "iuawmtcy"
-password = "" # Don't commit!!!
+password = "UnWCQ5-4ymEJCpY5Tly-F7ZXXONAEx7i" # Don't commit!!!
 host = "salt.db.elephantsql.com"
 
 # Establish connection
