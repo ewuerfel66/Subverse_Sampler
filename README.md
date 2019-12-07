@@ -35,3 +35,4 @@ The results of the sampler are displayed on the [Subverse Sampler](https://odin-
     * The Washington Examiner
   - Right:
     * Breitbart
+    * The New York Post
