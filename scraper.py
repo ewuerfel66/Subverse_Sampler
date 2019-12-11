@@ -38,6 +38,7 @@ fox = Source("Fox News", "fox", sections.fox, scrapers.fox)
 hill = Source("The Hill", "hill", sections.hill, scrapers.hill)
 huffpo = Source("The Huffington Post", "huffpo", sections.huffpo, scrapers.huffpo)
 msnbc = Source("MSNBC", "msnbc", sections.msnbc, scrapers.msnbc)
+nr = Source("National Review", "nr", sections.nr, scrapers.nr)
 nypost = Source("The New York Post", "nypost", sections.nypost, scrapers.nypost)
 nyt = Source("The New York Times", "nyt", sections.nyt, scrapers.nyt)
 reason = Source("Reason", "reason", sections.reason, scrapers.reason)
@@ -45,8 +46,10 @@ vox = Source("Vox", "vox", sections.vox, scrapers.vox)
 wapo = Source("The Washington Post", "wapo", sections.wapo, scrapers.wapo)
 wsj = Source("The Wall Street Journal", "wsj", sections.wsj, scrapers.wsj)
 
-# Create source list
-sources = [ap, breitbart, buzzfeed, fox, hill, huffpo, msnbc, nypost, nyt, vox, reason, examiner, wapo, wsj]
+# Create source list (rows of 5)
+sources = [ap, breitbart, buzzfeed, fox, hill, 
+           huffpo, msnbc, nr, nypost, nyt, 
+           reason, vox, examiner, wapo, wsj]
 
 
 ####################################################
@@ -116,7 +119,7 @@ print("--- Connecting...")
 # Credentials
 dbname = "iuawmtcy"
 user = "iuawmtcy"
-password = "" # Don't commit!!!
+password = "UnWCQ5-4ymEJCpY5Tly-F7ZXXONAEx7i" # Don't commit!!!
 host = "salt.db.elephantsql.com"
 
 # Establish connection

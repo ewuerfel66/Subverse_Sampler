@@ -150,7 +150,7 @@ def hill(hill_Sections, hill_ArticleURLs):
             print(e)
 
 
-# huffpo
+# The Huffington Post
 def huffpo(huffpo_Sections, huffpo_ArticleURLs):
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.10; rv:62.0) Gecko/20100101 Firefox/62.0'}
     
@@ -183,6 +183,23 @@ def msnbc(msnbc_Sections, msnbc_ArticleURLs):
                     if link.attrs['href'] not in msnbc_ArticleURLs:
                         # print(link.attrs['href'])
                         msnbc_ArticleURLs.append(link.attrs['href'])  
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
+# National Review
+def nr(nr_Sections, nr_ArticleURLs):
+    for SectionURL in nr_Sections:
+        try:
+            html = urlopen(SectionURL)
+            soup = BeautifulSoup(html, 'html.parser')
+            for link in soup.find_all('a', href=re.compile('^(https://www.nationalreview).*([a-z]+-[a-z]+-[a-z]+/)$')):
+                if 'href' in link.attrs:
+                    if link.attrs['href'] not in nr_ArticleURLs:
+                        # print(link.attrs['href'])
+                        nr_ArticleURLs.append(link.attrs['href'])
         except HTTPError as e:
             print(e)
         except URLError as e:

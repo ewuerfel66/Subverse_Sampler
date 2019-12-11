@@ -22,17 +22,22 @@ The results of the sampler are displayed on the [Subverse Sampler](https://odin-
 
 ## Sources:
   - Left:
+    * The Huffington Post
     * MSNBC
     * Vox
   - Center Left:
+    * Buzzfeed News
     * The New York Times
     * The Washington Post
   - Center:
+    * Associated Press
     * The Hill
     * The Wall Street Journal
   - Center Right:
     * Fox News
+    * Reason
     * The Washington Examiner
   - Right:
     * Breitbart
+    * National Review
     * The New York Post

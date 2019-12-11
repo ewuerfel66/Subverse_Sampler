@@ -123,6 +123,12 @@ msnbc = ['https://www.nbcnews.com/',
          'https://www.nbcnews.com/health']
 
 
+# National Review
+nr = ['https://www.nationalreview.com/', 
+      'https://www.nationalreview.com/news/',
+      'https://www.nationalreview.com/latest/']
+
+
 # The New York Post
 nypost = ['https://nypost.com/',
           'https://nypost.com/news/',
