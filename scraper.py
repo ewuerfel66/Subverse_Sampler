@@ -30,6 +30,7 @@ from sources import Source
 #################### Sources #######################
 ####################################################
 
+ap = Source("Associated Press", "ap", sections.ap, scrapers.ap)
 breitbart = Source("Breitbart", "breitbart", sections.breitbart, scrapers.breitbart)
 examiner = Source("The Washington Examiner", "examiner", sections.examiner, scrapers.examiner)
 fox = Source("Fox News", "fox", sections.fox, scrapers.fox)
@@ -42,7 +43,7 @@ wapo = Source("The Washington Post", "wapo", sections.wapo, scrapers.wapo)
 wsj = Source("The Wall Street Journal", "wsj", sections.wsj, scrapers.wsj)
 
 # Create source list
-sources = [breitbart, examiner, fox, hill, msnbc, nypost, nyt, vox, wapo, wsj]
+sources = [ap, breitbart, fox, hill, msnbc, nypost, nyt, vox, examiner, wapo, wsj]
 
 
 ####################################################
@@ -112,7 +113,7 @@ print("--- Connecting...")
 # Credentials
 dbname = "iuawmtcy"
 user = "iuawmtcy"
-password = "" # Don't commit!!!
+password = "UnWCQ5-4ymEJCpY5Tly-F7ZXXONAEx7i" # Don't commit!!!
 host = "salt.db.elephantsql.com"
 
 # Establish connection

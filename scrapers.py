@@ -10,15 +10,19 @@ from bs4 import BeautifulSoup
 
 # AP
 def ap(ap_Sections, ap_ArticleURLs):
+    stragglers = ["/termsofservice", "/privacystatement"]
+    
     for SectionURL in ap_Sections:
         try:
             html = urlopen(SectionURL)
             soup = BeautifulSoup(html, 'html.parser')
-            for link in soup.find_all('a', {'class':'headline'}, href=re.compile('^/([a-z]+|[0-9]+)')):
+            for link in soup.find_all('a', href=re.compile("^/[a-z0-9]+$")):
                 if 'href' in link.attrs:
-                    if link.attrs['href'] not in ap_ArticleURLs:
-                        # print(link.attrs['href'])
-                        ap_ArticleURLs.append(link.attrs['href'])
+                    if link.attrs['href'] not in stragglers:
+                        if link.attrs['href'] not in ap_ArticleURLs:
+                            newPage = "https://apnews.com" + str(link.attrs['href'])
+                            # print(newPage)
+                            ap_ArticleURLs.append(newPage)
         except HTTPError as e:
             print(e)
         except URLError as e:
