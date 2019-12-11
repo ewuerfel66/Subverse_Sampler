@@ -150,6 +150,28 @@ def hill(hill_Sections, hill_ArticleURLs):
             print(e)
 
 
+# huffpo
+def huffpo(huffpo_Sections, huffpo_ArticleURLs):
+    headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.10; rv:62.0) Gecko/20100101 Firefox/62.0'}
+    
+    for SectionURL in huffpo_Sections:
+        try:
+            req = Request(url=SectionURL, headers=headers)
+            html = urlopen(req).read()
+            soup = BeautifulSoup(html, 'html.parser')
+        
+            for link in soup.find_all('a', href=re.compile("^(https://www.huffpost.com/entry/)")):
+                if 'href' in link.attrs:
+                    if link.attrs['href'] not in huffpo_ArticleURLs:
+                        newPage = link.attrs['href']
+                        # print(newPage)
+                        huffpo_ArticleURLs.append(newPage)
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
 # MSNBC
 def msnbc(msnbc_Sections, msnbc_ArticleURLs):
     for SectionURL in msnbc_Sections:

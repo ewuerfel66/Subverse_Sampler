@@ -103,6 +103,15 @@ hill = ['https://thehill.com/',
         'https://thehill.com/policy/national-security']
 
 
+# The Huffington Post
+huffpo = ['https://www.huffpost.com/',
+          'https://www.huffpost.com/news/',
+          'https://www.huffpost.com/news/politics',
+          'https://www.huffpost.com/entertainment/',
+          'https://www.huffpost.com/voices/',
+          'https://www.huffpost.com/life/']
+
+
 # MSNBC
 msnbc = ['https://www.nbcnews.com/',
          'https://www.nbcnews.com/guns-in-america',
