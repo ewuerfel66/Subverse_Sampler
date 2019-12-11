@@ -4,7 +4,7 @@ print("Connecting...")
 # Credentials
 dbname = "iuawmtcy"
 user = "iuawmtcy"
-password = "" # Don't commit!!!
+password = "UnWCQ5-4ymEJCpY5Tly-F7ZXXONAEx7i" # Don't commit!!!
 host = "salt.db.elephantsql.com"
 
 # Establish connection
@@ -16,11 +16,11 @@ pg_curs = pg_conn.cursor()
 
 # Statements
 drop = """
-DROP TABLE news;
+DROP TABLE news_test;
 """
 
 create = """
-CREATE TABLE news (
+CREATE TABLE news_test (
     id SERIAL PRIMARY KEY,
     article_URL VARCHAR(500),
     source VARCHAR(20),
@@ -31,9 +31,9 @@ CREATE TABLE news (
 """
 
 # Execute statements
-print("Droppin old `news` table...")
+print("Droppin old `news_test` table...")
 pg_curs.execute(drop)
-print("Creating new `news` table...")
+print("Creating new `news_test` table...")
 pg_curs.execute(create)
 
 # Close up
