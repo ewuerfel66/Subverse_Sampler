@@ -202,6 +202,25 @@ def nyt(nyt_Sections, nyt_ArticleURLs):
             pass
 
 
+# Reason
+def reason(reason_Sections, reason_ArticleURLs):
+    for SectionURL in reason_Sections:
+        try:
+            html = urlopen(SectionURL)
+            soup = BeautifulSoup(html, 'html.parser')
+        
+            for link in soup.find_all('a', href=re.compile('^(https://reason.com/[0-9]+)')):
+                if 'href' in link.attrs:
+                    if link.attrs['href'] not in reason_ArticleURLs:
+                        newPage = link.attrs['href']
+                        # print(newPage)
+                        reason_ArticleURLs.append(newPage)
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
 # Vox
 def vox(vox_Sections, vox_ArticleURLs):
     for SectionURL in vox_Sections:

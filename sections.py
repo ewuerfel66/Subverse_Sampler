@@ -159,6 +159,11 @@ nyt = ['https://www.nytimes.com/section/todayspaper',
         'https://www.nytimes.com/section/lens']
 
 
+# Reason
+reason = ['https://reason.com/',
+          'https://reason.com/latest/']
+
+
 # Vox
 vox = ['https://www.vox.com/recode',
         'https://www.vox.com/explainers',
