@@ -87,7 +87,7 @@ print("Pulling old data:")
 for source in sources:
     print(f"--- {source.name}")
     pull_data = """
-    SELECT article_url FROM news_test
+    SELECT article_url FROM news
     WHERE source='""" + str(source.codename) + "';"
     # Execute
     pg_curs.execute(pull_data)
