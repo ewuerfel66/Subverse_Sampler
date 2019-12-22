@@ -162,7 +162,7 @@ print('--- Adding data to DataBase...')
 # Loop over the array to write rows in the DB
 for row in rows:
     insert = """
-    INSERT INTO news_test
+    INSERT INTO news
     (article_URL, source, day, month, year)
     VALUES 
     """ + str(row) + ';'
