@@ -61,6 +61,37 @@ year = datetime.now().year
 
 
 ####################################################
+################# Load Old Data ####################
+####################################################
+
+print("Connecting to DataBase...")
+# Credentials
+dbname = "iuawmtcy"
+user = "iuawmtcy"
+password = "UnWCQ5-4ymEJCpY5Tly-F7ZXXONAEx7i" # Don't commit!!!
+host = "salt.db.elephantsql.com"
+
+# Establish connection
+pg_conn = psycopg2.connect(dbname=dbname, user=user,
+    password=password, host=host)
+
+# Instantiate cursor
+pg_curs = pg_conn.cursor()
+
+print("Pulling old data...")
+
+# Loop over sources
+for source in sources:
+    print(f"--- {source.name}")
+    pull_data = """
+    SELECT article_url FROM news_test
+    WHERE source='""" + str(source.codename) + "';"
+    # Execute
+    pg_curs.execute(pull_data)
+    source.article_URLs = [url[0] for url in pg_curs.fetchall()]
+
+
+####################################################
 ################# Scrape Sources ###################
 ####################################################
 
@@ -69,10 +100,9 @@ print("Scraping:")
 # Loop over sources
 for paper in sources:
     print(f"--- {paper.name}")
-    # print(paper.sections[0], paper.article_URLs[0])
-    new_articles = []
-    paper.scraper(paper.sections, new_articles)
-    paper.article_URLs = new_articles
+    fresh_articles = []
+    paper.scraper(paper.sections, fresh_articles)
+    paper.article_URLs = [x for x in fresh_articles if x not in paper.article_URLs]
 
 print("")
 
@@ -112,20 +142,6 @@ print("")
 ####################################################
 
 print("Sending to DataBase:")
-
-print("--- Connecting...")
-# Credentials
-dbname = "iuawmtcy"
-user = "iuawmtcy"
-password = "" # Don't commit!!!
-host = "salt.db.elephantsql.com"
-
-# Establish connection
-pg_conn = psycopg2.connect(dbname=dbname, user=user,
-    password=password, host=host)
-
-# Instantiate cursor
-pg_curs = pg_conn.cursor()
 
 # Clean data for db insertion
 print('--- Getting the data ready...')
