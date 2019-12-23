@@ -29,6 +29,25 @@ def ap(ap_Sections, ap_ArticleURLs):
             print(e)
 
 
+# Bloomberg
+def bloom(bloom_Sections, bloom_ArticleURLs):
+    
+    for SectionURL in bloom_Sections:
+        try:
+            html = urlopen(SectionURL)
+            soup = BeautifulSoup(html, 'html.parser')
+            for link in soup.find_all('a'):
+                if 'href' in link.attrs:
+                    if link.attrs['href'] not in bloom_ArticleURLs:
+                        newPage = "https://www.bloomberg.com" + str(link.attrs['href'])
+                        print(newPage)
+                        bloom_ArticleURLs.append(newPage)
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
 # Breitbart
 def breitbart(breitbart_Sections, breitbart_ArticleURLs):
     for SectionURL in breitbart_Sections:

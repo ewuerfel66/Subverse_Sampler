@@ -14,6 +14,14 @@ ap = ['https://www.apnews.com/',
       'https://www.apnews.com/apf-intlnews']
 
 
+# Bloomberg
+bloom = ['https://www.bloomberg.com/',
+         'https://www.bloomberg.com/markets',
+         'https://www.bloomberg.com/technology',
+         'https://www.bloomberg.com/politics',
+         'https://www.bloomberg.com/pursuits']
+
+
 # Breitbart
 breitbart = ['https://www.breitbart.com/politics/',
                 'https://www.breitbart.com/entertainment/',

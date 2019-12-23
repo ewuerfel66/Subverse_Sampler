@@ -31,8 +31,10 @@ from sources import Source
 ####################################################
 
 ap = Source("Associated Press", "ap", sections.ap, scrapers.ap)
+bloom = Source("Bloomberg", "bloom", sections.bloom, scrapers.bloom)
 breitbart = Source("Breitbart", "breitbart", sections.breitbart, scrapers.breitbart)
 buzzfeed = Source("Buzzfeed News", "buzzfeed", sections.buzzfeed, scrapers.buzzfeed)
+dailyWire = Source("The Daily Wire", "dailyWire", sections.dailyWire, scrapers.dailyWire)
 examiner = Source("The Washington Examiner", "examiner", sections.examiner, scrapers.examiner)
 fox = Source("Fox News", "fox", sections.fox, scrapers.fox)
 hill = Source("The Hill", "hill", sections.hill, scrapers.hill)
@@ -47,7 +49,9 @@ wapo = Source("The Washington Post", "wapo", sections.wapo, scrapers.wapo)
 wsj = Source("The Wall Street Journal", "wsj", sections.wsj, scrapers.wsj)
 
 # Create source list
-sources = [nr]
+sources = [ap, breitbart, buzzfeed, dailyWire, fox, hill, 
+           huffpo, msnbc, nr, nypost, nyt, 
+           reason, vox, examiner, wapo, wsj]
 
 
 ####################################################

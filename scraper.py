@@ -47,7 +47,7 @@ wapo = Source("The Washington Post", "wapo", sections.wapo, scrapers.wapo)
 wsj = Source("The Wall Street Journal", "wsj", sections.wsj, scrapers.wsj)
 
 # Create source list (rows of 5)
-sources = [ap, breitbart, buzzfeed, fox, hill, 
+sources = [ap, breitbart, buzzfeed, dailyWire, fox, hill, 
            huffpo, msnbc, nr, nypost, nyt, 
            reason, vox, examiner, wapo, wsj]
 
