@@ -34,6 +34,7 @@ ap = Source("Associated Press", "ap", sections.ap, scrapers.ap)
 bloom = Source("Bloomberg", "bloom", sections.bloom, scrapers.bloom)
 breitbart = Source("Breitbart", "breitbart", sections.breitbart, scrapers.breitbart)
 buzzfeed = Source("Buzzfeed News", "buzzfeed", sections.buzzfeed, scrapers.buzzfeed)
+cnn = Source("CNN", "cnn", sections.cnn, scrapers.cnn)
 dailyWire = Source("The Daily Wire", "dailyWire", sections.dailyWire, scrapers.dailyWire)
 examiner = Source("The Washington Examiner", "examiner", sections.examiner, scrapers.examiner)
 fox = Source("Fox News", "fox", sections.fox, scrapers.fox)
@@ -44,14 +45,14 @@ nr = Source("National Review", "nr", sections.nr, scrapers.nr)
 nypost = Source("The New York Post", "nypost", sections.nypost, scrapers.nypost)
 nyt = Source("The New York Times", "nyt", sections.nyt, scrapers.nyt)
 reason = Source("Reason", "reason", sections.reason, scrapers.reason)
+reuters = Source("Reuters", "reuters", sections.reuters, scrapers.reuters)
 vox = Source("Vox", "vox", sections.vox, scrapers.vox)
 wapo = Source("The Washington Post", "wapo", sections.wapo, scrapers.wapo)
+watimes = Source("The Washington Times", "watimes", sections.watimes, scrapers.watimes)
 wsj = Source("The Wall Street Journal", "wsj", sections.wsj, scrapers.wsj)
 
 # Create source list
-sources = [ap, breitbart, buzzfeed, dailyWire, fox, hill, 
-           huffpo, msnbc, nr, nypost, nyt, 
-           reason, vox, examiner, wapo, wsj]
+sources = [watimes]
 
 
 ####################################################
@@ -72,7 +73,7 @@ print("Connecting to DataBase...")
 # Credentials
 dbname = "iuawmtcy"
 user = "iuawmtcy"
-password = "" # Don't commit!!!
+password = "1BQERv0bE7Sae5QYYrPrTC5Hv-RXiaW7" # Don't commit!!!
 host = "salt.db.elephantsql.com"
 
 # Establish connection

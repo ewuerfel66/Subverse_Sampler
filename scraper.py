@@ -31,8 +31,9 @@ from sources import Source
 ####################################################
 
 ap = Source("Associated Press", "ap", sections.ap, scrapers.ap)
-buzzfeed = Source("Buzzfeed News", "buzzfeed", sections.buzzfeed, scrapers.buzzfeed)
 breitbart = Source("Breitbart", "breitbart", sections.breitbart, scrapers.breitbart)
+buzzfeed = Source("Buzzfeed News", "buzzfeed", sections.buzzfeed, scrapers.buzzfeed)
+cnn = Source("CNN", "cnn", sections.cnn, scrapers.cnn)
 examiner = Source("The Washington Examiner", "examiner", sections.examiner, scrapers.examiner)
 fox = Source("Fox News", "fox", sections.fox, scrapers.fox)
 hill = Source("The Hill", "hill", sections.hill, scrapers.hill)
@@ -42,14 +43,16 @@ nr = Source("National Review", "nr", sections.nr, scrapers.nr)
 nypost = Source("The New York Post", "nypost", sections.nypost, scrapers.nypost)
 nyt = Source("The New York Times", "nyt", sections.nyt, scrapers.nyt)
 reason = Source("Reason", "reason", sections.reason, scrapers.reason)
+reuters = Source("Reuters", "reuters", sections.reuters, scrapers.reuters)
 vox = Source("Vox", "vox", sections.vox, scrapers.vox)
 wapo = Source("The Washington Post", "wapo", sections.wapo, scrapers.wapo)
 wsj = Source("The Wall Street Journal", "wsj", sections.wsj, scrapers.wsj)
 
 # Create source list (rows of 5)
-sources = [ap, breitbart, buzzfeed, dailyWire, fox, hill, 
+sources = [ap, breitbart, buzzfeed, cnn, dailyWire, 
+           fox, hill, 
            huffpo, msnbc, nr, nypost, nyt, 
-           reason, vox, examiner, wapo, wsj]
+           reason, reuters, vox, examiner, wapo, wsj]
 
 
 ####################################################
@@ -81,19 +84,17 @@ pg_conn = psycopg2.connect(dbname=dbname, user=user,
 # Instantiate cursor
 pg_curs = pg_conn.cursor()
 
-print("Pulling old data:")
+print("Pulling old data...")
+print("")
 
 # Loop over sources
 for source in sources:
-    print(f"--- {source.name}")
     pull_data = """
     SELECT article_url FROM news
     WHERE source='""" + str(source.codename) + "';"
     # Execute
     pg_curs.execute(pull_data)
     source.article_URLs = [url[0] for url in pg_curs.fetchall()]
-
-print("")
 
 
 ####################################################
@@ -146,10 +147,9 @@ print("")
 ############## Send to ElephantSQL##################
 ####################################################
 
-print("Sending to DataBase:")
-
 # Clean data for db insertion
-print('--- Getting the data ready...')
+print('Getting the data ready...')
+print("")
 dirty_rows = df.values
 
 # Clean up rows
@@ -158,7 +158,8 @@ rows = []
 for row in dirty_rows:
     rows.append(tuple(row))
 
-print('--- Adding data to DataBase...')
+print('Adding data to DataBase...')
+print("")
 # Loop over the array to write rows in the DB
 for row in rows:
     insert = """
@@ -173,5 +174,5 @@ for row in rows:
 pg_curs.close()
 pg_conn.commit()
 
-print("")
 print('all done!')
+print("")
