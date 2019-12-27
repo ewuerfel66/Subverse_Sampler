@@ -29,6 +29,24 @@ def ap(ap_Sections, ap_ArticleURLs):
             print(e)
 
 
+# BBC
+def bbc(bbc_Sections, bbc_ArticleURLs):
+    for SectionURL in bbc_Sections:
+        try:
+            html = urlopen(SectionURL)
+            soup = BeautifulSoup(html, 'html.parser')
+            for link in soup.find_all('a', href=re.compile('^(/news/).*([0-9]+)$')):
+                if 'href' in link.attrs:
+                    if link.attrs['href'] not in bbc_ArticleURLs:
+                        newPage = 'https://www.bbc.com' + link.attrs['href']
+                        # print(newPage)
+                        bbc_ArticleURLs.append(newPage)
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
 # Bloomberg
 def bloom(bloom_Sections, bloom_ArticleURLs):
     
@@ -96,6 +114,27 @@ def cnn(cnn_Sections, cnn_ArticleURLs):
                             newPage = "https://www.cnn.com" + str(link.attrs['href'])
                             # print(newPage)
                             cnn_ArticleURLs.append(newPage)
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
+# The Daily Caller
+def dailyCaller(dailyCaller_Sections, dailyCaller_ArticleURLs):
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    
+    for SectionURL in dailyCaller_Sections:
+        try:
+            req = Request(url=SectionURL, headers=headers)
+            html = urlopen(req).read()
+            soup = BeautifulSoup(html, 'html.parser')
+            for link in soup.find_all('a', href=re.compile('^(/news/).*([0-9]+)$')):
+                if 'href' in link.attrs:
+                    if link.attrs['href'] not in dailyCaller_ArticleURLs:
+                        newPage = 'https://dailycaller.com' + link.attrs['href']
+                        print(newPage)
+                        dailyCaller_ArticleURLs.append(newPage)
         except HTTPError as e:
             print(e)
         except URLError as e:

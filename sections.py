@@ -14,6 +14,19 @@ ap = ['https://www.apnews.com/',
       'https://www.apnews.com/apf-intlnews']
 
 
+# BBC
+bbc = ['https://www.bbc.com/news', 
+       'https://www.bbc.com/news/world', 
+       'https://www.bbc.com/news/world/us_and_canada', 
+       'https://www.bbc.com/news/uk', 
+       'https://www.bbc.com/news/business', 
+       'https://www.bbc.com/news/technology', 
+       'https://www.bbc.com/news/science_and_environment', 
+       'https://www.bbc.com/news/stories', 
+       'https://www.bbc.com/news/entertainment_and_arts', 
+       'https://www.bbc.com/news/health']
+
+
 # Bloomberg
 bloom = ['https://www.bloomberg.com/',
          'https://www.bloomberg.com/markets',
@@ -61,6 +74,18 @@ cnn = ['https://www.cnn.com/',
         'https://www.cnn.com/health',
         'https://www.cnn.com/entertainment',
         'https://www.cnn.com/style']
+
+
+# The Daily Caller
+dailyCaller = ['https://dailycaller.com/', 
+               'https://dailycaller.com/section/politics/', 
+               'https://dailycaller.com/section/us/', 
+               'https://dailycaller.com/section/world/', 
+               'https://dailycaller.com/section/entertainment/', 
+               'https://dailycaller.com/section/sports/', 
+               'https://dailycaller.com/section/business/', 
+               'https://dailycaller.com/section/guns-and-gear/', 
+               'https://dailycaller.com/section/comedy/']
 
 
 # The Daily Wire

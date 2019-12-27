@@ -31,10 +31,12 @@ from sources import Source
 ####################################################
 
 ap = Source("Associated Press", "ap", sections.ap, scrapers.ap)
-bloom = Source("Bloomberg", "bloom", sections.bloom, scrapers.bloom)
+bbc = Source("The BBC", "bbc", sections.bbc, scrapers.bbc)
+# bloom = Source("Bloomberg", "bloom", sections.bloom, scrapers.bloom)
 breitbart = Source("Breitbart", "breitbart", sections.breitbart, scrapers.breitbart)
 buzzfeed = Source("Buzzfeed News", "buzzfeed", sections.buzzfeed, scrapers.buzzfeed)
 cnn = Source("CNN", "cnn", sections.cnn, scrapers.cnn)
+# dailyCaller = Source("The Daily Caller", "dailyCaller", sections.dailyCaller, scrapers.dailyCaller)
 dailyWire = Source("The Daily Wire", "dailyWire", sections.dailyWire, scrapers.dailyWire)
 examiner = Source("The Washington Examiner", "examiner", sections.examiner, scrapers.examiner)
 fox = Source("Fox News", "fox", sections.fox, scrapers.fox)
@@ -50,11 +52,11 @@ reason = Source("Reason", "reason", sections.reason, scrapers.reason)
 reuters = Source("Reuters", "reuters", sections.reuters, scrapers.reuters)
 vox = Source("Vox", "vox", sections.vox, scrapers.vox)
 wapo = Source("The Washington Post", "wapo", sections.wapo, scrapers.wapo)
-watimes = Source("The Washington Times", "watimes", sections.watimes, scrapers.watimes)
+# watimes = Source("The Washington Times", "watimes", sections.watimes, scrapers.watimes)
 wsj = Source("The Wall Street Journal", "wsj", sections.wsj, scrapers.wsj)
 
 # Create source list
-sources = [npr]
+sources = [bbc]
 
 
 ####################################################
