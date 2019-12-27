@@ -130,6 +130,16 @@ huffpo = ['https://www.huffpost.com/',
           'https://www.huffpost.com/life/']
 
 
+# The Intercept
+intercept = ['https://theintercept.com/', 
+             'https://theintercept.com/politics/', 
+             'https://theintercept.com/justice/', 
+             'https://theintercept.com/national-security/', 
+             'https://theintercept.com/world/', 
+             'https://theintercept.com/technology/', 
+             'https://theintercept.com/environment/']
+
+
 # MSNBC
 msnbc = ['https://www.nbcnews.com/',
          'https://www.nbcnews.com/guns-in-america',
@@ -139,6 +149,18 @@ msnbc = ['https://www.nbcnews.com/',
          'https://www.nbcnews.com/world',
          'https://www.nbcnews.com/tech-media',
          'https://www.nbcnews.com/health']
+
+
+# NPR
+npr = ['https://www.npr.org/', 
+       'https://www.npr.org/sections/national/', 
+       'https://www.npr.org/sections/politics/', 
+       'https://www.npr.org/sections/health/', 
+       'https://www.npr.org/sections/technology/', 
+       'https://www.npr.org/sections/world/', 
+       'https://www.npr.org/sections/business/', 
+       'https://www.npr.org/sections/science/', 
+       'https://www.npr.org/sections/codeswitch/']
 
 
 # National Review

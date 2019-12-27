@@ -209,6 +209,27 @@ def huffpo(huffpo_Sections, huffpo_ArticleURLs):
             print(e)
 
 
+# The Intercept
+def intercept(intercept_Sections, intercept_ArticleURLs):
+    headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.10; rv:62.0) Gecko/20100101 Firefox/62.0'}
+    
+    for section in intercept_Sections:
+        try:
+            req = Request(url=section, headers=headers) 
+            html = urlopen(req).read()
+            soup = BeautifulSoup(html, 'html.parser')
+            for link in soup.find_all('a', href=re.compile('^https://theintercept.com/[0-9]+/[0-9]+/[0-9]+/')):
+                    if 'href' in link.attrs:
+                        if link.attrs['href'] not in intercept_ArticleURLs:
+                            newPage = link.attrs['href']
+                            # print(newPage)
+                            intercept_ArticleURLs.append(newPage)
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
 # MSNBC
 def msnbc(msnbc_Sections, msnbc_ArticleURLs):
     for SectionURL in msnbc_Sections:
@@ -220,6 +241,23 @@ def msnbc(msnbc_Sections, msnbc_ArticleURLs):
                     if link.attrs['href'] not in msnbc_ArticleURLs:
                         # print(link.attrs['href'])
                         msnbc_ArticleURLs.append(link.attrs['href'])  
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
+# NPR
+def npr(npr_Sections, npr_ArticleURLs):
+    for SectionURL in npr_Sections:
+        try:
+            html = urlopen(SectionURL)
+            soup = BeautifulSoup(html, 'html.parser')
+            for link in soup.find_all('a', href=re.compile('^(https).*([a-z0-9]+-[a-z0-9]+-[a-z0-9]+)$')):
+                if 'href' in link.attrs:
+                    if link.attrs['href'] not in npr_ArticleURLs:
+                        # print(link.attrs['href'])
+                        npr_ArticleURLs.append(link.attrs['href'])
         except HTTPError as e:
             print(e)
         except URLError as e:
