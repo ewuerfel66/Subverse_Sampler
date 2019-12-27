@@ -29,6 +29,25 @@ def ap(ap_Sections, ap_ArticleURLs):
             print(e)
 
 
+# Bloomberg
+def bloom(bloom_Sections, bloom_ArticleURLs):
+    
+    for SectionURL in bloom_Sections:
+        try:
+            html = urlopen(SectionURL)
+            soup = BeautifulSoup(html, 'html.parser')
+            for link in soup.find_all('a'):
+                if 'href' in link.attrs:
+                    if link.attrs['href'] not in bloom_ArticleURLs:
+                        newPage = "https://www.bloomberg.com" + str(link.attrs['href'])
+                        print(newPage)
+                        bloom_ArticleURLs.append(newPage)
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
 # Breitbart
 def breitbart(breitbart_Sections, breitbart_ArticleURLs):
     for SectionURL in breitbart_Sections:
@@ -59,6 +78,24 @@ def buzzfeed(buzzfeed_Sections, buzzfeed_ArticleURLs):
                             newPage = link.attrs['href']
                             # print(newPage)
                             buzzfeed_ArticleURLs.append(newPage)
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
+# CNN
+def cnn(cnn_Sections, cnn_ArticleURLs):
+    for SectionURL in cnn_Sections:
+        try:
+            html = urlopen(SectionURL)
+            soup = BeautifulSoup(html, 'html.parser')
+            for link in soup.find_all('a', href=re.compile('^(/[0-9]+/[0-9]+/[0-9]+/)')):
+                    if 'href' in link.attrs:
+                        if link.attrs['href'] not in cnn_ArticleURLs:
+                            newPage = "https://www.cnn.com" + str(link.attrs['href'])
+                            # print(newPage)
+                            cnn_ArticleURLs.append(newPage)
         except HTTPError as e:
             print(e)
         except URLError as e:
@@ -172,6 +209,27 @@ def huffpo(huffpo_Sections, huffpo_ArticleURLs):
             print(e)
 
 
+# The Intercept
+def intercept(intercept_Sections, intercept_ArticleURLs):
+    headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.10; rv:62.0) Gecko/20100101 Firefox/62.0'}
+    
+    for section in intercept_Sections:
+        try:
+            req = Request(url=section, headers=headers) 
+            html = urlopen(req).read()
+            soup = BeautifulSoup(html, 'html.parser')
+            for link in soup.find_all('a', href=re.compile('^https://theintercept.com/[0-9]+/[0-9]+/[0-9]+/')):
+                    if 'href' in link.attrs:
+                        if link.attrs['href'] not in intercept_ArticleURLs:
+                            newPage = link.attrs['href']
+                            # print(newPage)
+                            intercept_ArticleURLs.append(newPage)
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
 # MSNBC
 def msnbc(msnbc_Sections, msnbc_ArticleURLs):
     for SectionURL in msnbc_Sections:
@@ -183,6 +241,23 @@ def msnbc(msnbc_Sections, msnbc_ArticleURLs):
                     if link.attrs['href'] not in msnbc_ArticleURLs:
                         # print(link.attrs['href'])
                         msnbc_ArticleURLs.append(link.attrs['href'])  
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
+# NPR
+def npr(npr_Sections, npr_ArticleURLs):
+    for SectionURL in npr_Sections:
+        try:
+            html = urlopen(SectionURL)
+            soup = BeautifulSoup(html, 'html.parser')
+            for link in soup.find_all('a', href=re.compile('^(https).*([a-z0-9]+-[a-z0-9]+-[a-z0-9]+)$')):
+                if 'href' in link.attrs:
+                    if link.attrs['href'] not in npr_ArticleURLs:
+                        # print(link.attrs['href'])
+                        npr_ArticleURLs.append(link.attrs['href'])
         except HTTPError as e:
             print(e)
         except URLError as e:
@@ -260,6 +335,24 @@ def reason(reason_Sections, reason_ArticleURLs):
             print(e)
 
 
+# Reuters
+def reuters(reuters_Sections, reuters_ArticleURLs):
+    for SectionURL in reuters_Sections:
+        try:
+            html = urlopen(SectionURL)
+            soup = BeautifulSoup(html, 'html.parser')
+            for link in soup.find_all('a', href=re.compile('^(https://www.reuters.com/article/)')):
+                    if 'href' in link.attrs:
+                        if link.attrs['href'] not in reuters_ArticleURLs:
+                            newPage = link.attrs['href']
+                            # print(newPage)
+                            reuters_ArticleURLs.append(newPage)
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
 # Vox
 def vox(vox_Sections, vox_ArticleURLs):
     for SectionURL in vox_Sections:
@@ -296,6 +389,24 @@ def wapo(wapo_Sections, wapo_ArticleURLs):
                             # print(newPage)
                             wapo_ArticleURLs.append(newPage)
                         
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
+# The Washington Times
+def watimes(watimes_Sections, watimes_ArticleURLs):
+    for SectionURL in watimes_Sections:
+        try:
+            html = urlopen(SectionURL)
+            soup = BeautifulSoup(html, 'html.parser')
+        
+            for link in soup.find_all('a', href=re.compile('^(/[a-z]+/[0-9]+/[a-z]+/[0-9]+/)|^(https://www.washingtontimes.com/[a-z]+/[0-9]+/[a-z]+/[0-9]+/)')):
+                if 'href' in link.attrs:
+                    if link.attrs['href'] not in watimes_ArticleURLs:
+                        new_Page = link.attrs['href']
+                        watimes_ArticleURLs.append(new_Page)
         except HTTPError as e:
             print(e)
         except URLError as e:
