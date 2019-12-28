@@ -27,12 +27,16 @@ bbc = ['https://www.bbc.com/news',
        'https://www.bbc.com/news/health']
 
 
-# Bloomberg
-bloom = ['https://www.bloomberg.com/',
-         'https://www.bloomberg.com/markets',
-         'https://www.bloomberg.com/technology',
-         'https://www.bloomberg.com/politics',
-         'https://www.bloomberg.com/pursuits']
+# The Blaze
+blaze = ['https://www.theblaze.com/News/']
+
+
+# # Bloomberg
+# bloom = ['https://www.bloomberg.com/',
+#          'https://www.bloomberg.com/markets',
+#          'https://www.bloomberg.com/technology',
+#          'https://www.bloomberg.com/politics',
+#          'https://www.bloomberg.com/pursuits']
 
 
 # Breitbart
@@ -76,16 +80,23 @@ cnn = ['https://www.cnn.com/',
         'https://www.cnn.com/style']
 
 
-# The Daily Caller
-dailyCaller = ['https://dailycaller.com/', 
-               'https://dailycaller.com/section/politics/', 
-               'https://dailycaller.com/section/us/', 
-               'https://dailycaller.com/section/world/', 
-               'https://dailycaller.com/section/entertainment/', 
-               'https://dailycaller.com/section/sports/', 
-               'https://dailycaller.com/section/business/', 
-               'https://dailycaller.com/section/guns-and-gear/', 
-               'https://dailycaller.com/section/comedy/']
+# # The Daily Caller
+# dailyCaller = ['https://dailycaller.com/', 
+#                'https://dailycaller.com/section/politics/', 
+#                'https://dailycaller.com/section/us/', 
+#                'https://dailycaller.com/section/world/', 
+#                'https://dailycaller.com/section/entertainment/', 
+#                'https://dailycaller.com/section/sports/', 
+#                'https://dailycaller.com/section/business/', 
+#                'https://dailycaller.com/section/guns-and-gear/', 
+#                'https://dailycaller.com/section/comedy/']
+
+
+# The Daily Mail
+dailyMail = ['https://www.dailymail.co.uk/ushome/index.html', 
+             'https://www.dailymail.co.uk/home/index.html', 
+             'https://www.dailymail.co.uk/news/index.html',
+             'https://www.dailymail.co.uk/news/worldnews/index.html']
 
 
 # The Daily Wire
@@ -165,6 +176,11 @@ intercept = ['https://theintercept.com/',
              'https://theintercept.com/environment/']
 
 
+# Jacobin
+jacobin = ['https://www.jacobinmag.com/', 
+           'https://www.jacobinmag.com/blog']
+
+
 # MSNBC
 msnbc = ['https://www.nbcnews.com/',
          'https://www.nbcnews.com/guns-in-america',
@@ -239,6 +255,15 @@ nyt = ['https://www.nytimes.com/section/todayspaper',
         'https://www.nytimes.com/section/lens']
 
 
+# Politico
+politico = ['https://www.politico.com/', 
+            'https://www.politico.com/agenda-policy', 
+            'https://www.politico.com/magazine/', 
+            'https://www.politico.com/congress', 
+            'https://www.politico.com/white-house', 
+            'https://www.politico.com/news/2020-elections']
+
+
 # Reason
 reason = ['https://reason.com/',
           'https://reason.com/latest/']
@@ -293,33 +318,33 @@ wapo = ['https://www.washingtonpost.com/regional/',
         'https://www.washingtonpost.com/news/powerpost/wp/category/the-cybersecurity-202/']
 
 
-# The Washington Times
-watimes = ['https://www.washingtontimes.com/',
-           'https://www.washingtontimes.com/news/politics/',
-           'https://www.washingtontimes.com/news/national/',
-           'https://www.washingtontimes.com/news/world/',
-           'https://www.washingtontimes.com/news/security/',
-           'https://www.washingtontimes.com/news/business-economy/',
-           'https://www.washingtontimes.com/news/local/',
-           'https://www.washingtontimes.com/specials/faith-and-family/',
-           'https://www.washingtontimes.com/news/inside-politics/',
-           'https://www.washingtontimes.com/news/inside-the-ring/',
-           'https://www.washingtontimes.com/culture/',
-           'https://www.washingtontimes.com/culture/entertainment/',
-           'https://www.washingtontimes.com/culture/technology/',
-           'https://www.washingtontimes.com/specials/energy-environment-news/',
-           'https://www.washingtontimes.com/specials/banking-finance/',
-           'https://www.washingtontimes.com/specials/health-care-reform/',
-           'https://www.washingtontimes.com/specials/second-amendment-and-gun-control/',
-           'https://www.washingtontimes.com/specials/immigration-reform/',
-           'https://www.washingtontimes.com/specials/intelligence-cybersecurity/',
-           'https://www.washingtontimes.com/specials/defense-aerospace/',
-           'https://www.washingtontimes.com/specials/taxes-budget/',
-           'https://www.washingtontimes.com/specials/law-enforcement-intelligence/',
-           'https://www.washingtontimes.com/specials/transportation-infrastructure/',
-           'https://www.washingtontimes.com/news/waste-fraud-abuse/',
-           'https://www.washingtontimes.com/media-spotlight/',
-           'https://www.washingtontimes.com/specials/dive-deeper/']
+# # The Washington Times
+# watimes = ['https://www.washingtontimes.com/',
+#            'https://www.washingtontimes.com/news/politics/',
+#            'https://www.washingtontimes.com/news/national/',
+#            'https://www.washingtontimes.com/news/world/',
+#            'https://www.washingtontimes.com/news/security/',
+#            'https://www.washingtontimes.com/news/business-economy/',
+#            'https://www.washingtontimes.com/news/local/',
+#            'https://www.washingtontimes.com/specials/faith-and-family/',
+#            'https://www.washingtontimes.com/news/inside-politics/',
+#            'https://www.washingtontimes.com/news/inside-the-ring/',
+#            'https://www.washingtontimes.com/culture/',
+#            'https://www.washingtontimes.com/culture/entertainment/',
+#            'https://www.washingtontimes.com/culture/technology/',
+#            'https://www.washingtontimes.com/specials/energy-environment-news/',
+#            'https://www.washingtontimes.com/specials/banking-finance/',
+#            'https://www.washingtontimes.com/specials/health-care-reform/',
+#            'https://www.washingtontimes.com/specials/second-amendment-and-gun-control/',
+#            'https://www.washingtontimes.com/specials/immigration-reform/',
+#            'https://www.washingtontimes.com/specials/intelligence-cybersecurity/',
+#            'https://www.washingtontimes.com/specials/defense-aerospace/',
+#            'https://www.washingtontimes.com/specials/taxes-budget/',
+#            'https://www.washingtontimes.com/specials/law-enforcement-intelligence/',
+#            'https://www.washingtontimes.com/specials/transportation-infrastructure/',
+#            'https://www.washingtontimes.com/news/waste-fraud-abuse/',
+#            'https://www.washingtontimes.com/media-spotlight/',
+#            'https://www.washingtontimes.com/specials/dive-deeper/']
 
 
 # WSJ
