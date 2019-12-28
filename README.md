@@ -24,15 +24,18 @@ The results of the sampler are displayed on the [Subverse Sampler](https://odin-
   - Left:
     * The Huffington Post
     * The Intercept
+    * Jacobin Magazine
     * MSNBC
     * Vox
   - Center Left:
     * Buzzfeed News
     * CNN
     * The New York Times
+    * Politico
     * The Washington Post
   - Center:
     * Associated Press
+    * BBC
     * The Hill
     * NPR
     * Reuters
@@ -42,7 +45,9 @@ The results of the sampler are displayed on the [Subverse Sampler](https://odin-
     * Reason
     * The Washington Examiner
   - Right:
+    * The Blaze
     * Breitbart
+    * The Daily Mail
     * The Daily Wire
     * National Review
     * The New York Post
