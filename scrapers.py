@@ -229,6 +229,27 @@ def examiner(examiner_Sections, examiner_ArticleURLs):
                     examiner_ArticleURLs.append(link.attrs['href'])
 
 
+# The Federalist
+def fed(fed_Sections, fed_ArticleURLs):
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    
+    for SectionURL in fed_Sections:
+        try:
+            req = Request(url=SectionURL, headers=headers)
+            html = urlopen(req).read()
+            soup = BeautifulSoup(html, 'html.parser')
+            for link in soup.find_all('a', href=re.compile('^(https://thefederalist.com/[0-9]+/[0-9]+/[0-9]+/)')):
+                if 'href' in link.attrs:
+                    if link.attrs['href'] not in fed_ArticleURLs:
+                        newPage = link.attrs['href']
+                        # print(newPage)
+                        fed_ArticleURLs.append(newPage)
+        except HTTPError as e:
+            print(e)
+        except URLError as e:
+            print(e)
+
+
 # Fox News
 def fox(fox_Sections, fox_ArticleURLs):
     for SectionURL in fox_Sections:
