@@ -2,6 +2,7 @@
 import pandas as pd
 
 import re
+import time
 
 from urllib.error import HTTPError
 from urllib.error import URLError
@@ -491,16 +492,21 @@ def reuters(reuters_Sections, reuters_ArticleURLs):
 
 # Vox
 def vox(vox_Sections, vox_ArticleURLs):
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    
     for SectionURL in vox_Sections:
         try:
-            html = urlopen(SectionURL)
+            req = Request(url=SectionURL, headers=headers)
+            html = urlopen(req).read()
             soup = BeautifulSoup(html, 'html.parser')
         
-            for link in soup.find_all('a', href=re.compile('https://www.vox.com/')):
+            for link in soup.find_all('a', href=re.compile('^https://www.vox.com/.*[0-9]+/[0-9]+/[0-9]+/[0-9]+/')):
+                # time.sleep(2)
                 if 'href' in link.attrs:
                     if link.attrs['href'] not in vox_ArticleURLs:
-                        new_Page = link.attrs['href']
-                        vox_ArticleURLs.append(new_Page)
+                        newPage = link.attrs['href']
+                        # print(f"---{newPage}")
+                        vox_ArticleURLs.append(newPage)
         except HTTPError as e:
             print(e)
         except URLError as e:
