@@ -39,6 +39,7 @@ cnn = Source("CNN", "cnn", sections.cnn, scrapers.cnn)
 dailyMail = Source("The Daily Mail", "dailyMail", sections.dailyMail, scrapers.dailyMail)
 dailyWire = Source("The Daily Wire", "dailyWire", sections.dailyWire, scrapers.dailyWire)
 examiner = Source("The Washington Examiner", "examiner", sections.examiner, scrapers.examiner)
+fed = Source("The Federalist", "fed", sections.fed, scrapers.fed)
 fox = Source("Fox News", "fox", sections.fox, scrapers.fox)
 hill = Source("The Hill", "hill", sections.hill, scrapers.hill)
 huffpo = Source("The Huffington Post", "huffpo", sections.huffpo, scrapers.huffpo)
@@ -58,10 +59,11 @@ wsj = Source("The Wall Street Journal", "wsj", sections.wsj, scrapers.wsj)
 
 # Create source list (rows of 5)
 sources = [ap, bbc, blaze, breitbart, buzzfeed, 
-           cnn, dailyMail, dailyWire, fox, hill, 
-           huffpo, intercept, jacobin, msnbc, npr, 
-           nr, nypost, nyt, politico, reason, 
-           reuters, vox, examiner, wapo, wsj]
+           cnn, dailyMail, dailyWire, fed, fox, 
+           hill, huffpo, intercept, jacobin, msnbc, 
+           npr, nr, nypost, nyt, politico, 
+           reason, reuters, vox, examiner, wapo, 
+           wsj]
 
 
 ####################################################
