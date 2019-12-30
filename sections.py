@@ -120,6 +120,12 @@ examiner = ['https://www.washingtonexaminer.com',
                 'https://www.washingtonexaminer.com/business']
 
 
+# The Federalist
+fed = ['https://thefederalist.com/', 
+       'https://thefederalist.com/blog/', 
+       'https://thefederalist.com/most-popular/']
+
+
 # Fox News
 fox = ['https://www.foxnews.com/',
        'https://www.foxnews.com/us',
