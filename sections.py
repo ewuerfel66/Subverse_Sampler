@@ -1,34 +1,87 @@
+"""
+Sections List for each Source
+
+## Include:
+        * Front Page
+        * News (+Subsections)
+        * Politics (+Subsections)
+        * World (+Subsections)
+        * Science
+        * Sports
+        * Entertainment
+        * Business
+        * Lifestyle
+        * Travel
+        * Religion
+        * Culture
+        * Music
+        * Special Reports
+        * Anything Generally-Presented-As News
+
+## Exclude:
+        * Photo & Video Pages
+        * Podcasts
+        * Sports Rankings Reports
+        * Essays & Opinion
+        * Weather
+        * Subsections of Sports & Travel
+        * Book Lists
+        * TV
+        * Externally-linked Associated Websites
+"""
+
 # AP
-ap = ['https://www.apnews.com/',
-      'https://www.apnews.com/apf-topnews',
-      'https://www.apnews.com/apf-sports',
-      'https://www.apnews.com/apf-entertainment',
-      'https://www.apnews.com/apf-oddities',
-      'https://www.apnews.com/apf-Travel',
-      'https://www.apnews.com/apf-technology',
-      'https://www.apnews.com/apf-lifestyle',
-      'https://www.apnews.com/apf-business',
-      'https://www.apnews.com/apf-usnews',
-      'https://www.apnews.com/apf-Health',
-      'https://www.apnews.com/apf-science',
-      'https://www.apnews.com/apf-intlnews']
+ap = ['https://apnews.com/',
+      'https://apnews.com/apf-topnews',
+      'https://apnews.com/apf-sports',
+      'https://apnews.com/apf-entertainment',
+      'https://apnews.com/apf-oddities',
+      'https://apnews.com/apf-Travel',
+      'https://apnews.com/apf-technology',
+      'https://apnews.com/apf-lifestyle',
+      'https://apnews.com/apf-business',
+      'https://apnews.com/apf-usnews',
+      'https://apnews.com/apf-Health',
+      'https://apnews.com/apf-science',
+      'https://apnews.com/apf-intlnews', 
+      'https://apnews.com/apf-politics', 
+      'https://apnews.com/apf-religion']
 
 
 # BBC
-bbc = ['https://www.bbc.com/news', 
+bbc = ['https://www.bbc.com/', 
+       'https://www.bbc.com/news', 
        'https://www.bbc.com/news/world', 
        'https://www.bbc.com/news/world/us_and_canada', 
+       'https://www.bbc.com/news/world/africa', 
+       'https://www.bbc.com/news/world/asia', 
+       'https://www.bbc.com/news/world/asia/china', 
+       'https://www.bbc.com/news/world/asia/india', 
+       'https://www.bbc.com/news/world/australia', 
+       'https://www.bbc.com/news/world/europe', 
+       'https://www.bbc.com/news/world/latin_america', 
+       'https://www.bbc.com/news/world/middle_east', 
        'https://www.bbc.com/news/uk', 
        'https://www.bbc.com/news/business', 
        'https://www.bbc.com/news/technology', 
        'https://www.bbc.com/news/science_and_environment', 
        'https://www.bbc.com/news/stories', 
        'https://www.bbc.com/news/entertainment_and_arts', 
-       'https://www.bbc.com/news/health']
+       'https://www.bbc.com/news/health', 
+       'https://www.bbc.com/news/reality_check', 
+       'https://www.bbc.com/news/newsbeat', 
+       'https://www.bbc.com/news/special_reports', 
+       'https://www.bbc.com/news/explainers', 
+       'https://www.bbc.com/news/have_your_say', 
+       'https://www.bbc.com/sport', 
+       'http://www.bbc.com/travel', 
+       'http://www.bbc.com/culture/us', 
+       'http://www.bbc.com/culture/music']
 
 
 # The Blaze
-blaze = ['https://www.theblaze.com/News/']
+blaze = ['https://www.theblaze.com/', 
+         'https://www.theblaze.com/News/']
 
 
 # # Bloomberg
@@ -53,13 +106,13 @@ breitbart = ['https://www.breitbart.com/politics/',
                 'https://www.breitbart.com/world-news/',
                 'https://www.breitbart.com/tech/',
                 'https://www.breitbart.com/sports/',
-                'https://www.breitbart.com/social-justice/']
+                'https://www.breitbart.com/social-justice/', 
+                'https://www.breitbart.com/tag/b-inspired-news/']
 
 
 # Buzzfeed
 buzzfeed = ['https://www.buzzfeednews.com/',
             'https://www.buzzfeednews.com/section/arts-entertainment',
-            'https://www.buzzfeednews.com/section/books',
             'https://www.buzzfeednews.com/section/business',
             'https://www.buzzfeednews.com/investigations',
             'https://www.buzzfeednews.com/section/lgbtq',
@@ -71,13 +124,24 @@ buzzfeed = ['https://www.buzzfeednews.com/',
 
 
 # CNN
-cnn = ['https://www.cnn.com/',
-        'https://www.cnn.com/world',
+cnn = ['https://www.cnn.com/', 
+        'https://www.cnn.com/us', 
+        'https://www.cnn.com/world', 
+        'https://www.cnn.com/africa', 
+        'https://www.cnn.com/americas', 
+        'https://www.cnn.com/asia', 
+        'https://www.cnn.com/australia', 
+        'https://www.cnn.com/china', 
+        'https://www.cnn.com/europe', 
+        'https://www.cnn.com/india', 
+        'https://www.cnn.com/middle-east', 
+        'https://www.cnn.com/uk', 
         'https://www.cnn.com/politics',
         'https://www.cnn.com/business',
         'https://www.cnn.com/health',
         'https://www.cnn.com/entertainment',
-        'https://www.cnn.com/style']
+        'https://www.cnn.com/style', 
+        'https://www.cnn.com/travel']
 
 
 # # The Daily Caller
@@ -95,29 +159,28 @@ cnn = ['https://www.cnn.com/',
 # The Daily Mail
 dailyMail = ['https://www.dailymail.co.uk/ushome/index.html', 
              'https://www.dailymail.co.uk/home/index.html', 
-             'https://www.dailymail.co.uk/news/index.html',
-             'https://www.dailymail.co.uk/news/worldnews/index.html']
+             'https://www.dailymail.co.uk/news/index.html', 
+             'https://www.dailymail.co.uk/sport/index.html', 
+             'https://www.dailymail.co.uk/usshowbiz/index.html', 
+             'https://www.dailymail.co.uk/auhome/index.html', 
+             'https://www.dailymail.co.uk/health/index.html', 
+             'https://www.dailymail.co.uk/sciencetech/index.html', 
+             'https://www.dailymail.co.uk/money/index.html', 
+             'https://www.dailymail.co.uk/travel/index.html', 
+             'https://www.dailymail.co.uk/news/worldnews/index.html', 
+             'https://www.dailymail.co.uk/news/isis/index.html', 
+             'https://www.dailymail.co.uk/news/russia/index.html', 
+             'https://www.dailymail.co.uk/news/china/index.html', 
+             'https://www.dailymail.co.uk/news/syria/index.html', 
+             'https://www.dailymail.co.uk/news/iran/index.html', 
+             'https://www.dailymail.co.uk/news/israel/index.html', 
+             'https://www.dailymail.co.uk/news/turkey/index.html', 
+             'https://www.dailymail.co.uk/news/nigeria/index.html', 
+             'https://www.dailymail.co.uk/news/north_korea/index.html']
 
 
 # The Daily Wire
 dailyWire = ['https://www.dailywire.com/']
-
-# Examiner
-examiner = ['https://www.washingtonexaminer.com',
-                'https://www.washingtonexaminer.com/news/white-house',
-                'https://www.washingtonexaminer.com/news/congress',
-                'https://www.washingtonexaminer.com/news/campaigns',
-                'https://www.washingtonexaminer.com/politics',
-                'https://www.washingtonexaminer.com/policy/defense-national-security',
-                'https://www.washingtonexaminer.com/policy/energy',
-                'https://www.washingtonexaminer.com/policy/healthcare',
-                'https://www.washingtonexaminer.com/policy/economy',
-                'https://www.washingtonexaminer.com/policy/technology',
-                'https://www.washingtonexaminer.com/policy/courts',
-                'https://www.washingtonexaminer.com/policy/foreign',
-                'https://www.washingtonexaminer.com/policy',
-                'https://www.washingtonexaminer.com/news',
-                'https://www.washingtonexaminer.com/business']
 
 
 # The Federalist
@@ -128,11 +191,36 @@ fed = ['https://thefederalist.com/',
 
 # Fox News
 fox = ['https://www.foxnews.com/',
-       'https://www.foxnews.com/us',
-       'https://www.foxnews.com/world',
-       'https://www.foxnews.com/politics',
+       'https://www.foxnews.com/us', 
+       'https://www.foxnews.com/category/us/crime', 
+       'https://www.foxnews.com/category/us/military', 
+       'https://www.foxnews.com/category/us/education', 
+       'https://www.foxnews.com/category/us/terror', 
+       'https://www.foxnews.com/category/us/immigration', 
+       'https://www.foxnews.com/category/us/economy', 
+       'https://www.foxnews.com/category/us/personal-freedoms', 
+       'https://www.foxnews.com/category/news-events/fox-news-investigates', 
+       'https://www.foxnews.com/world', 
+       'https://www.foxnews.com/category/world/united-nations', 
+       'https://www.foxnews.com/category/world/conflicts', 
+       'https://www.foxnews.com/category/world/terrorism', 
+       'https://www.foxnews.com/category/world/disasters', 
+       'https://www.foxnews.com/category/world/global-economy', 
+       'https://www.foxnews.com/category/world/environment', 
+       'https://www.foxnews.com/category/world/religion', 
+       'https://www.foxnews.com/category/world/scandals', 
+       'https://www.foxnews.com/politics', 
+       'https://www.foxnews.com/category/politics/executive', 
+       'https://www.foxnews.com/category/politics/senate', 
+       'https://www.foxnews.com/category/politics/house-of-representatives', 
+       'https://www.foxnews.com/category/politics/judiciary', 
+       'https://www.foxnews.com/category/politics/foreign-policy', 
+       'https://www.foxnews.com/category/politics/elections', 
+       'https://www.foxnews.com/science', 
        'https://www.foxnews.com/entertainment',
-       'https://www.foxnews.com/lifestyle']
+       'https://www.foxnews.com/lifestyle', 
+       'https://www.foxnews.com/tech', 
+       'https://www.foxnews.com/health']
 
 
 # The Hill
@@ -179,7 +267,8 @@ intercept = ['https://theintercept.com/',
              'https://theintercept.com/national-security/', 
              'https://theintercept.com/world/', 
              'https://theintercept.com/technology/', 
-             'https://theintercept.com/environment/']
+             'https://theintercept.com/environment/', 
+             'https://theintercept.com/special-investigations/']
 
 
 # Jacobin
@@ -188,8 +277,10 @@ jacobin = ['https://www.jacobinmag.com/',
 
 
 # MSNBC
-msnbc = ['https://www.nbcnews.com/',
-         'https://www.nbcnews.com/guns-in-america',
+msnbc = ['https://www.nbcnews.com/', 
+         'https://www.nbcnews.com/Trump-impeachment-inquiry', 
+         'https://www.nbcnews.com/science', 
+         'https://www.nbcnews.com/politics/2020-presidential-election', 
          'https://www.nbcnews.com/politics',
          'https://www.nbcnews.com/us-news',
          'https://www.nbcnews.com/business',
@@ -205,6 +296,11 @@ npr = ['https://www.npr.org/',
        'https://www.npr.org/sections/health/', 
        'https://www.npr.org/sections/technology/', 
        'https://www.npr.org/sections/world/', 
+       'https://www.npr.org/sections/asia/', 
+       'https://www.npr.org/sections/middle-east/', 
+       'https://www.npr.org/sections/europe/', 
+       'https://www.npr.org/sections/africa/', 
+       'https://www.npr.org/sections/latin-america/', 
        'https://www.npr.org/sections/business/', 
        'https://www.npr.org/sections/science/', 
        'https://www.npr.org/sections/codeswitch/']
@@ -213,7 +309,16 @@ npr = ['https://www.npr.org/',
 # National Review
 nr = ['https://www.nationalreview.com/', 
       'https://www.nationalreview.com/news/',
-      'https://www.nationalreview.com/latest/']
+      'https://www.nationalreview.com/latest/', 
+      'https://www.nationalreview.com/politics-policy/', 
+      'https://www.nationalreview.com/elections/', 
+      'https://www.nationalreview.com/culture/', 
+      'https://www.nationalreview.com/white-house/', 
+      'https://www.nationalreview.com/pc-culture/', 
+      'https://www.nationalreview.com/us/', 
+      'https://www.nationalreview.com/world/', 
+      'https://www.nationalreview.com/immigration/', 
+      'https://www.nationalreview.com/economy-business/']
 
 
 # The New York Post
@@ -232,20 +337,26 @@ nypost = ['https://nypost.com/',
 
 
 # NYT
-nyt = ['https://www.nytimes.com/section/todayspaper',
-        'https://www.nytimes.com/section/world',
+nyt = ['https://www.nytimes.com/section/todayspaper', 
+        'https://www.nytimes.com/'
+        'https://www.nytimes.com/section/world', 
+        'https://www.nytimes.com/section/world/africa', 
+        'https://www.nytimes.com/section/world/americas', 
+        'https://www.nytimes.com/section/world/asia', 
+        'https://www.nytimes.com/section/world/australia', 
+        'https://www.nytimes.com/section/world/canada', 
+        'https://www.nytimes.com/section/world/europe', 
+        'https://www.nytimes.com/section/world/middleeast', 
         'https://www.nytimes.com/section/us',
-        'https://www.nytimes.com/section/politics',
+        'https://www.nytimes.com/section/politics', 
+        'https://www.nytimes.com/news-event/democratic-debates', 
         'https://www.nytimes.com/section/nyregion',
         'https://www.nytimes.com/section/business',
         'https://www.nytimes.com/section/technology',
         'https://www.nytimes.com/section/science',
         'https://www.nytimes.com/section/health',
         'https://www.nytimes.com/section/sports',
-        'https://www.nytimes.com/section/arts',
-        'https://www.nytimes.com/section/books',
         'https://www.nytimes.com/section/style',
-        'https://www.nytimes.com/section/food',
         'https://www.nytimes.com/section/travel',
         'https://www.nytimes.com/section/realestate',
         'https://www.nytimes.com/section/climate',
@@ -267,7 +378,21 @@ politico = ['https://www.politico.com/',
             'https://www.politico.com/magazine/', 
             'https://www.politico.com/congress', 
             'https://www.politico.com/white-house', 
-            'https://www.politico.com/news/2020-elections']
+            'https://www.politico.com/news/2020-elections', 
+            'https://www.politico.com/tag/agriculture', 
+            'https://www.politico.com/cannabis', 
+            'https://www.politico.com/tag/cybersecurity', 
+            'https://www.politico.com/tag/defense', 
+            'https://www.politico.com/tag/education', 
+            'https://www.politico.com/ehealth', 
+            'https://www.politico.com/tag/employment-immigration', 
+            'https://www.politico.com/energy-and-environment', 
+            'https://www.politico.com/finance', 
+            'https://www.politico.com/health-care', 
+            'https://www.politico.com/tag/space', 
+            'https://www.politico.com/technology', 
+            'https://www.politico.com/trade', 
+            'https://www.politico.com/transportation']
 
 
 # Reason
@@ -300,6 +425,24 @@ vox = ['https://www.vox.com/recode',
         'https://www.vox.com/energy-and-environment',
         'https://www.vox.com/technology',
         'https://www.vox.com/business-and-finance']
+
+
+# The Washington Examiner
+examiner = ['https://www.washingtonexaminer.com',
+                'https://www.washingtonexaminer.com/news/white-house',
+                'https://www.washingtonexaminer.com/news/congress',
+                'https://www.washingtonexaminer.com/news/campaigns',
+                'https://www.washingtonexaminer.com/politics',
+                'https://www.washingtonexaminer.com/policy/defense-national-security',
+                'https://www.washingtonexaminer.com/policy/energy',
+                'https://www.washingtonexaminer.com/policy/healthcare',
+                'https://www.washingtonexaminer.com/policy/economy',
+                'https://www.washingtonexaminer.com/policy/technology',
+                'https://www.washingtonexaminer.com/policy/courts',
+                'https://www.washingtonexaminer.com/policy/foreign',
+                'https://www.washingtonexaminer.com/policy',
+                'https://www.washingtonexaminer.com/news',
+                'https://www.washingtonexaminer.com/business']
 
 
 # The Washington Post
