@@ -505,7 +505,7 @@ def vox(vox_Sections, vox_ArticleURLs):
                 if 'href' in link.attrs:
                     if link.attrs['href'] not in vox_ArticleURLs:
                         newPage = link.attrs['href']
-                        print(f"---{newPage}")
+                        # print(f"---{newPage}")
                         vox_ArticleURLs.append(newPage)
         except HTTPError as e:
             print(e)
