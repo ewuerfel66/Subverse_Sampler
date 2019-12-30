@@ -61,7 +61,7 @@ wapo = Source("The Washington Post", "wapo", sections.wapo, scrapers.wapo)
 wsj = Source("The Wall Street Journal", "wsj", sections.wsj, scrapers.wsj)
 
 # Create source list
-sources = [fed]
+sources = [vox]
 
 
 ####################################################
@@ -83,7 +83,7 @@ print("")
 # Credentials
 dbname = "iuawmtcy"
 user = "iuawmtcy"
-password = "" # Don't commit!!!
+password = "1BQERv0bE7Sae5QYYrPrTC5Hv-RXiaW7" # Don't commit!!!
 host = "salt.db.elephantsql.com"
 
 # Establish connection
