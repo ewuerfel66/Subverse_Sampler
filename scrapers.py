@@ -2,6 +2,7 @@
 import pandas as pd
 
 import re
+import time
 
 from urllib.error import HTTPError
 from urllib.error import URLError
@@ -500,6 +501,7 @@ def vox(vox_Sections, vox_ArticleURLs):
             soup = BeautifulSoup(html, 'html.parser')
         
             for link in soup.find_all('a', href=re.compile('^https://www.vox.com/.*[0-9]+/[0-9]+/[0-9]+/[0-9]+/')):
+                time.sleep(2)
                 if 'href' in link.attrs:
                     if link.attrs['href'] not in vox_ArticleURLs:
                         newPage = link.attrs['href']
