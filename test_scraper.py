@@ -63,6 +63,13 @@ wsj = Source("The Wall Street Journal", "wsj", sections.wsj, scrapers.wsj)
 # Create source list
 sources = [vox]
 
+# sources = [ap, bbc, blaze, breitbart, buzzfeed, 
+#            cnn, dailyMail, dailyWire, fed, fox, 
+#            hill, huffpo, intercept, jacobin, msnbc, 
+#            npr, nr, nypost, nyt, politico, 
+#            reason, reuters, vox, examiner, wapo, 
+#            wsj]
+
 
 ####################################################
 ################## Global Vars #####################
@@ -81,10 +88,10 @@ year = datetime.now().year
 print("Connecting to DataBase...")
 print("")
 # Credentials
-dbname = "iuawmtcy"
-user = "iuawmtcy"
+dbname = "jfblqfwt"
+user = "jfblqfwt"
 password = "" # Don't commit!!!
-host = "salt.db.elephantsql.com"
+host = "rajje.db.elephantsql.com"
 
 # Establish connection
 pg_conn = psycopg2.connect(dbname=dbname, user=user,

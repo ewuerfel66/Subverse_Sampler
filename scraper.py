@@ -83,10 +83,10 @@ year = datetime.now().year
 print("Connecting to DataBase...")
 print("")
 # Credentials
-dbname = "iuawmtcy"
-user = "iuawmtcy"
+dbname = "jfblqfwt"
+user = "jfblqfwt"
 password = "" # Don't commit!!!
-host = "salt.db.elephantsql.com"
+host = "rajje.db.elephantsql.com"
 
 # Establish connection
 pg_conn = psycopg2.connect(dbname=dbname, user=user,
@@ -101,7 +101,7 @@ print("")
 # Loop over sources
 for source in sources:
     pull_data = """
-    SELECT article_url FROM news
+    SELECT article_url FROM news_first2020
     WHERE source='""" + str(source.codename) + "';"
     # Execute
     pg_curs.execute(pull_data)
@@ -172,7 +172,7 @@ print("")
 # Loop over the array to write rows in the DB
 for row in rows:
     insert = """
-    INSERT INTO news
+    INSERT INTO news_first2020
     (article_URL, source, day, month, year)
     VALUES 
     """ + str(row) + ';'

@@ -2,10 +2,10 @@ import psycopg2
 
 print("Connecting...")
 # Credentials
-dbname = "iuawmtcy"
-user = "iuawmtcy"
+dbname = "jfblqfwt"
+user = "jfblqfwt"
 password = "" # Don't commit!!!
-host = "salt.db.elephantsql.com"
+host = "rajje.db.elephantsql.com"
 
 # Establish connection
 pg_conn = psycopg2.connect(dbname=dbname, user=user,

@@ -162,20 +162,17 @@ def cnn(cnn_Sections, cnn_ArticleURLs):
 
 # The Daily Mail
 def dailyMail(dailyMail_Sections, dailyMail_ArticleURLs):
-    stragglers = ['https://www.dailymail.co.uk/news/index.html', 
-                  'https://www.dailymail.co.uk/news/worldnews/index.html']
 
     for SectionURL in dailyMail_Sections:
         try:
             html = urlopen(SectionURL)
             soup = BeautifulSoup(html, 'html.parser')
-            for link in soup.find_all('a', href=re.compile('^(/news/)')):
+            for link in soup.find_all('a', href=re.compile('^(/news/).*([a-z]+-[a-z]+.html)$')):
                 if 'href' in link.attrs:
                         if link.attrs['href'] not in dailyMail_ArticleURLs:
                             newPage = 'https://www.dailymail.co.uk' + link.attrs['href']
-                            if newPage not in stragglers:
-                                # print(newPage)
-                                dailyMail_ArticleURLs.append(newPage)
+                            # print(newPage)
+                            dailyMail_ArticleURLs.append(newPage)
         except HTTPError as e:
             print(e)
         except URLError as e:
